@@ -41,7 +41,7 @@
     <!-- Container -->
     <div class="kt-container-fixed">
       <div class="grid gap-5 lg:gap-7.5">
-        <div class="kt-card kt-card-grid min-w-full">
+        <div class="kt-card kt-card-grid min-w-full !rounded-none" style="border-radius: 0 !important;">
           <div class="kt-card-header flex-wrap gap-2">
             <h3 class="kt-card-title text-sm">
               Affichage de 4 missions sur 12
