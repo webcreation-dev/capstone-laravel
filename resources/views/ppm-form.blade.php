@@ -33,215 +33,81 @@
          <div class="flex flex-col grow relative before:absolute before:left-[11px] before:top-0 before:bottom-0 before:border-l before:border-border" data-kt-scrollspy="true" data-kt-scrollspy-offset="110px" data-kt-scrollspy-target="body">
           <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 active border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#basic_settings">
            <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary">
-           </span>Informations Générales
+           </span>Information Package
           </a>
-          <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#auth_email">
+          <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#lots_associes">
            <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary">
-           </span>Budget & Financement
-          </a>
-          <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#auth_social_sign_in">
-           <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary">
-           </span>Calendrier Prévisionnel
+           </span>Lots associés
           </a>
          </div>
         </div>
        </div>
        <div class="flex flex-col items-stretch grow gap-5 lg:gap-7.5">
-        <div class="kt-card pb-2.5">
-         <div class="kt-card-header" id="basic_settings">
-          <h3 class="kt-card-title">Informations Générales</h3>
+         <!-- Card 1: Information Package -->
+         <div class="kt-card pb-2.5">
+          <div class="kt-card-header" id="basic_settings">
+           <h3 class="kt-card-title">Information Package</h3>
+          </div>
+          <div class="kt-card-content grid gap-5">
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Type de Package
+             </label>
+             <select class="kt-select" data-kt-select="true">
+              <option value="" disabled selected>Sélectionner le type</option>
+              <option value="travaux">Travaux</option>
+              <option value="biens">Biens</option>
+              <option value="consultants">Consultants</option>
+             </select>
+            </div>
+           </div>
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">Description du package</label>
+             <textarea class="kt-input min-h-[100px] w-full" placeholder="Détails de la mission ou du package..."></textarea>
+            </div>
+           </div>
+           
+           <div class="flex justify-end pt-2.5">
+            <button class="kt-btn kt-btn-primary">Enregistrer</button>
+           </div>
+          </div>
          </div>
-         <div class="kt-card-content grid gap-5">
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Statut initial
-            </label>
-            <select class="kt-select" data-kt-select="true">
-             <option>Nouveau</option>
-             <option>En cours</option>
-             <option>Reporté</option>
-             <option>Annulé</option>
-            </select>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Intitulé du projet
-            </label>
-            <input class="kt-input" type="text" value="Sélection cabinet d'audit financier 2026"/>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">Description détaillée</label>
-            <textarea class="kt-input min-h-[100px] w-full" placeholder="Détails du projet..."></textarea>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Méthode de sélection
-            </label>
-            <select class="kt-select" data-kt-select="true">
-             <option>SBQC</option>
-             <option>SCI</option>
-             <option>SMC</option>
-            </select>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Type de marché
-            </label>
-            <select class="kt-select" data-kt-select="true">
-             <option>Services Intellectuels</option>
-             <option>Travaux</option>
-             <option>Fournitures</option>
-            </select>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Date prévue de début
-            </label>
-            <div class="grow">
-             <div class="kt-input">
-              <i class="ki-filled ki-calendar">
-              </i>
-              <input class="grow" data-kt-date-picker="true" data-kt-date-picker-format="dd MMM yyyy" data-kt-date-picker-input-mode="true" data-kt-date-picker-position-to-input="left" id="validity-picker" placeholder="Sélectionner une date" readonly="" type="text"/>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Documents
-            </label>
-            <div class="grow">
-             <form action="#" class="file-upload" data-kt-dropzone="true" method="POST">
-              <div class="dropzone dropzone-clickable" data-kt-dropzone-accepted-files=".jpeg,.jpg,.png,.gif,.webp" data-kt-dropzone-max-filesize="2" data-kt-dropzone-url="upload/">
-               <div class="dropzone-message">
-                <div class="dropzone-message-icon">
-                 <i class="ki-filled ki-cloud-add">
-                 </i>
-                </div>
-                <div class="dropzone-message-text">
-                 <span class="dropzone-message-title">
-                  Choose a file or drag & drop here.
-                 </span>
-                 <span class="dropzone-message-desc">
-                  JPEG, PNG, GIF, WebP, up to 2 MB.
-                 </span>
-                </div>
-                <button class="kt-btn kt-btn-sm kt-btn-primary dropzone-browse-btn" type="button">
-                 Browse File
-                </button>
-               </div>
-              </div>
-              <div class="file-upload-list hidden">
-               <div class="dropzone-previews">
-               </div>
-              </div>
-             </form>
-            </div>
-           </div>
-          </div>
 
-          <div class="flex justify-end pt-2.5">
-           <button class="kt-btn kt-btn-primary">Enregistrer la mission</button>
+         <!-- Card 2: Lots associés -->
+         <div class="kt-card pb-2.5">
+          <div class="kt-card-header" id="lots_associes">
+           <h3 class="kt-card-title">Lots associés</h3>
+          </div>
+          <div class="kt-card-content grid gap-5 pt-7.5">
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Nom du lot
+             </label>
+             <input class="kt-input" type="text" placeholder="Ex: Lot 1 - Étude d'impact..." />
+            </div>
+           </div>
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Description du Lot
+             </label>
+             <textarea class="kt-input min-h-[100px] w-full" placeholder="Détails du lot..."></textarea>
+            </div>
+           </div>
+           
+           <div class="flex items-center justify-between pt-2.5">
+            <button class="kt-btn kt-btn-outline kt-btn-primary">
+             <i class="ki-filled ki-plus"></i>
+             Ajouter un lot
+            </button>
+            <button class="kt-btn kt-btn-primary">Enregistrer</button>
+           </div>
           </div>
          </div>
         </div>
-        <div class="kt-card pb-2.5">
-         <div class="kt-card-header" id="auth_email">
-          <h3 class="kt-card-title">
-           Budget & Financement
-          </h3>
-         </div>
-         <div class="kt-card-content grid gap-5 pt-7.5">
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Montant estimé (FCFA)
-            </label>
-            <input class="kt-input" type="number" placeholder="Ex: 50000000" />
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Source de financement
-            </label>
-            <select class="kt-select" data-kt-select="true">
-             <option>Budget National</option>
-             <option>Banque Mondiale</option>
-             <option>Union Européenne</option>
-             <option>BAD</option>
-            </select>
-           </div>
-          </div>
-          <div class="flex justify-end">
-           <button class="kt-btn kt-btn-primary">Enregistrer la mission</button>
-          </div>
-         </div>
-        </div>
-        <div class="kt-card pb-2.5">
-         <div class="kt-card-header" id="auth_social_sign_in">
-          <h3 class="kt-card-title">
-           Calendrier Prévisionnel
-          </h3>
-         </div>
-         <div class="kt-card-content grid gap-5 pt-7.5">
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Date prévue de publication de l'Avis
-            </label>
-            <div class="grow">
-             <div class="kt-input">
-              <i class="ki-filled ki-calendar"></i>
-              <input class="grow" data-kt-date-picker="true" data-kt-date-picker-format="dd MMM yyyy" readonly="" type="text"/>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Date prévue d'attribution
-            </label>
-            <div class="grow">
-             <div class="kt-input">
-              <i class="ki-filled ki-calendar"></i>
-              <input class="grow" data-kt-date-picker="true" data-kt-date-picker-format="dd MMM yyyy" readonly="" type="text"/>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="w-full">
-           <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-            <label class="kt-form-label flex items-center gap-1 max-w-56">
-             Date prévue de signature du contrat
-            </label>
-            <div class="grow">
-             <div class="kt-input">
-              <i class="ki-filled ki-calendar"></i>
-              <input class="grow" data-kt-date-picker="true" data-kt-date-picker-format="dd MMM yyyy" readonly="" type="text"/>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="flex justify-end">
-           <button class="kt-btn kt-btn-primary">Enregistrer la mission</button>
-          </div>
-         </div>
-        </div>
-       </div>
       </div>
      </div>
      <!-- End of Container -->
