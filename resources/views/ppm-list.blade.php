@@ -91,43 +91,41 @@
                         <input class="kt-checkbox kt-checkbox-sm" data-kt-datatable-check="true" type="checkbox" />
                       </th>
                       <th class="min-w-[300px]">
-                        <span class="kt-table-col">
-                          <span class="kt-table-col-label">Intitulé de la Mission</span>
-                          <span class="kt-table-col-sort">
-                          </span>
-                        </span>
-                      </th>
-                      <th class="min-w-[180px]">
-                        <span class="kt-table-col">
-                          <span class="kt-table-col-label">Méthode</span>
-                          <span class="kt-table-col-sort">
-                          </span>
-                        </span>
-                      </th>
-                      <th class="min-w-[180px]">
-                        <span class="kt-table-col">
-                          <span class="kt-table-col-label">Statut</span>
-                          <span class="kt-table-col-sort">
-                          </span>
-                        </span>
-                      </th>
-                      <th class="min-w-[180px]">
-                        <span class="kt-table-col">
-                          <span class="kt-table-col-label">Date Prévue</span>
-                          <span class="kt-table-col-sort">
-                          </span>
-                        </span>
-                      </th>
-                      <th class="min-w-[180px]">
-                        <span class="kt-table-col">
-                          <span class="kt-table-col-label">
-                            Budget Estimé
-                          </span>
-                          <span class="kt-table-col-sort">
-                          </span>
-                        </span>
-                      </th>
-                      <th class="w-[120px] text-end">
+               <span class="kt-table-col">
+                <span class="kt-table-col-label">Nom du dossier</span>
+                <span class="kt-table-col-sort">
+                </span>
+               </span>
+              </th>
+              <th class="min-w-[180px]">
+               <span class="kt-table-col">
+                <span class="kt-table-col-label">Numéro du Prêt / Don</span>
+                <span class="kt-table-col-sort">
+                </span>
+               </span>
+              </th>
+              <th class="min-w-[180px]">
+               <span class="kt-table-col">
+                <span class="kt-table-col-label">Pays / Organe d'exécution</span>
+                <span class="kt-table-col-sort">
+                </span>
+               </span>
+              </th>
+              <th class="min-w-[180px]">
+               <span class="kt-table-col">
+                <span class="kt-table-col-label">Unité de compte (CFA)</span>
+                <span class="kt-table-col-sort">
+                </span>
+               </span>
+              </th>
+              <th class="min-w-[180px]">
+               <span class="kt-table-col">
+                <span class="kt-table-col-label">Statut</span>
+                <span class="kt-table-col-sort">
+                </span>
+               </span>
+              </th>
+              <th class="w-[120px] text-end">
                         <span class="kt-table-col-label">Actions</span>
                       </th>
                     </tr>
@@ -153,24 +151,15 @@
                 </div>
                         </div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        SBQC
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21006370</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <i class="ki-filled ki-geolocation text-base text-muted-foreground"></i>
-                          Banikoara
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        50.000.000 FCFA
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -208,24 +197,15 @@
                 </div>
                         </div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        SCI
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21005974</td>
+              <td class="text-foreground font-normal">Togo / MTP</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <i class="ki-filled ki-geolocation text-base text-muted-foreground"></i>
-                          Djougou
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        15.000.000 FCFA
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -262,26 +242,17 @@
                 </div>
                         </div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        SMC
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21005781</td>
+              <td class="text-foreground font-normal">Togo / MTP</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           Publié
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <i class="ki-filled ki-geolocation text-base text-muted-foreground"></i>
-                          Cotonou
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        25.000.000 FCFA
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -319,26 +290,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        SBQC
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007137</td>
+              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           Évalué
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <i class="ki-filled ki-geolocation text-base text-muted-foreground"></i>
-                          Parakou
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        30.000.000 FCFA
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -376,27 +338,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Super Admin
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21003374</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/india.svg') }}" />
-                          India
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Month ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -434,25 +386,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Designer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21006359</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/australia.svg') }}" />
-                          Australia
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 14:23
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -490,25 +432,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Developer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21009910</td>
+              <td class="text-foreground font-normal">Togo / MTP</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/france.svg') }}" />
-                          France
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 10:12
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -546,25 +478,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">SBQC</td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21001882</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="size-1.5 rounded-full bg-green-500">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/germany.svg') }}" />
-                          Germany
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 09:45
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -602,25 +526,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Support
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21009673</td>
+              <td class="text-foreground font-normal">Bénin / MEFP</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/spain.svg') }}" />
-                          Spain
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Last week
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -658,23 +572,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">SBQC</td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21004265</td>
+              <td class="text-foreground font-normal">Bénin / MEFP</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/italy.svg') }}" />
-                          Italy
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Current session
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -712,25 +618,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Analyst
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21005479</td>
+              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/ukraine.svg') }}" />
-                          Ukraine
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 9:53 am
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -768,27 +664,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        CTO
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007818</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/japan.svg') }}" />
-                          Japan
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 17:45
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -826,25 +712,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        HR
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21009957</td>
+              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/south-korea.svg') }}" />
-                          South Korea
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Week ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -882,27 +758,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        DevOps
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21001620</td>
+              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="size-1.5 rounded-full bg-green-500">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/russia.svg') }}" />
-                          Russia
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 11:30
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -940,25 +806,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Designer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21008622</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/netherlands.svg') }}" />
-                          Netherlands
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 13:22
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -996,27 +852,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Engineer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21008834</td>
+              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/sweden.svg') }}" />
-                          Sweden
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Month ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1054,25 +900,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Analyst
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21005961</td>
+              <td class="text-foreground font-normal">Bénin / MEFP</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/mexico.svg') }}" />
-                          Mexico
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 10:50
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1110,25 +946,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Manager
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007625</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/uruguay.svg') }}" />
-                          Uruguay
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Current session
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1166,27 +992,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        HR
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21004085</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/brazil.svg') }}" />
-                          Brazil
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 14:20
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1222,25 +1038,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        HR
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21002852</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/turkey.svg') }}" />
-                          Turkey
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Current session
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1278,25 +1084,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Editor
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007931</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/finland.svg') }}" />
-                          Finland
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Week ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1334,27 +1130,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Viewer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21005714</td>
+              <td class="text-foreground font-normal">Bénin / MEFP</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/latvia.svg') }}" />
-                          Latvia
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Week ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1392,25 +1178,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Admin
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007417</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/brazil.svg') }}" />
-                          Brazil
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Current session
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1448,25 +1224,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Designer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21002443</td>
+              <td class="text-foreground font-normal">Bénin / MEFP</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/norway.svg') }}" />
-                          Norway
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 08:30
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1504,27 +1270,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Manager
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21007826</td>
+              <td class="text-foreground font-normal">Togo / MTP</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/ireland.svg') }}" />
-                          Ireland
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 12:00
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1562,27 +1318,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Engineer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21006076</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/belgium.svg') }}" />
-                          Belgium
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Month ago
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1620,25 +1366,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Developer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21008552</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/denmark.svg') }}" />
-                          Denmark
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 16:00
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1676,23 +1412,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">SBQC</td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21001825</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/portugal.svg') }}" />
-                          Portugal
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 12:45
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1730,27 +1458,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Support
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21008955</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/austria.svg') }}" />
-                          Austria
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 14:00
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1788,25 +1506,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Admin
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21001550</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/greece.svg') }}" />
-                          Greece
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Current session
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1844,27 +1552,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Analyst
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21006296</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">EUR</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/switzerland.svg') }}" />
-                          Switzerland
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 11:00
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1902,25 +1600,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Viewer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21009801</td>
+              <td class="text-foreground font-normal">Sénégal / MSAS</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/czech-republic.svg') }}" />
-                          Czech Republic
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Yesterday, 15:30
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1958,27 +1646,17 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Engineer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21003627</td>
+              <td class="text-foreground font-normal">Mali / MEN</td>
+              <td class="text-foreground font-normal">USD</td>
+              <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/hungary.svg') }}" />
-                          Hungary
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 10:30
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -2016,25 +1694,15 @@
                           
                 </div></div>
                       </td>
-                      <td class="text-foreground font-normal">
-                        Designer
-                      </td>
-                      <td>
+              <td class="text-foreground font-normal">PRT-21009162</td>
+              <td class="text-foreground font-normal">Togo / MTP</td>
+              <td class="text-foreground font-normal">FCFA</td>
+              <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-                      <td>
-                        <div class="flex items-center text-foreground font-normal gap-1.5">
-                          <img alt="" class="rounded-full size-4 shrink-0"
-                            src="{{ asset('assets/media/flags/poland.svg') }}" />
-                          Poland
-                        </div>
-                      </td>
-                      <td class="text-foreground font-normal">
-                        Today, 13:45
-                      </td>
-                      <td class="text-end">
+              <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
