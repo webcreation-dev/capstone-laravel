@@ -1643,46 +1643,28 @@
     
     <div class="kt-scrollable grow kt-scrollable-y p-5" data-kt-scrollable="true" data-kt-scrollable-dependencies="#create_ppm_header, #create_ppm_footer" data-kt-scrollable-offset="0px">
         <form class="flex flex-col gap-5">
-            <!-- Intitulé de la Mission -->
+            <!-- Pays / Organe d'exécution -->
             <div class="flex flex-col gap-2">
-                <label class="kt-form-label text-sm font-medium">Intitulé de la Mission</label>
-                <input type="text" class="kt-input text-sm" placeholder="Ex: Construction d'une école..." />
+                <label class="kt-form-label text-sm font-medium">Pays / Organe d'exécution</label>
+                <input type="text" class="kt-input text-sm" placeholder="Ex: Sénégal / Ministère de l'Éducation" />
             </div>
 
-            <!-- Méthode -->
+            <!-- Nom du dossier -->
             <div class="flex flex-col gap-2">
-                <label class="kt-form-label text-sm font-medium">Méthode de Passation</label>
-                <select class="kt-select text-sm" data-kt-select="true">
-                    <option value="" disabled selected>Sélectionner une méthode</option>
-                    <option value="AOO">AOO (Appel d'Offres Ouvert)</option>
-                    <option value="AOR">AOR (Appel d'Offres Restreint)</option>
-                    <option value="GD">Gré à Gré</option>
-                </select>
+                <label class="kt-form-label text-sm font-medium">Nom du dossier</label>
+                <input type="text" class="kt-input text-sm" placeholder="Saisir le nom du dossier" />
             </div>
 
-            <!-- Statut -->
+            <!-- Numéro du Prêt / Don -->
             <div class="flex flex-col gap-2">
-                <label class="kt-form-label text-sm font-medium">Statut</label>
-                <select class="kt-select text-sm" data-kt-select="true">
-                    <option value="planifie">Planifié</option>
-                    <option value="en_cours">En cours</option>
-                    <option value="termine">Terminé</option>
-                </select>
+                <label class="kt-form-label text-sm font-medium">Numéro du Prêt / Don</label>
+                <input type="text" class="kt-input text-sm" placeholder="Saisir le numéro" />
             </div>
 
-            <!-- Date Prévue -->
+            <!-- Unité de compte (CFA) -->
             <div class="flex flex-col gap-2">
-                <label class="kt-form-label text-sm font-medium">Date Prévue</label>
-                <div class="kt-input">
-                    <i class="ki-filled ki-calendar"></i>
-                    <input class="grow" data-kt-date-picker="true" data-kt-date-picker-format="dd MMM yyyy" readonly type="text" placeholder="Choisir une date" />
-                </div>
-            </div>
-
-            <!-- Budget Estimé -->
-            <div class="flex flex-col gap-2">
-                <label class="kt-form-label text-sm font-medium">Budget Estimé (FCFA)</label>
-                <input type="number" class="kt-input text-sm" placeholder="Ex: 15000000" />
+                <label class="kt-form-label text-sm font-medium">Unité de compte (CFA)</label>
+                <input type="text" class="kt-input text-sm" placeholder="Ex: FCFA, USD, EUR..." />
             </div>
         </form>
     </div>

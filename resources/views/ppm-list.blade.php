@@ -31,6 +31,9 @@
         <a class="kt-btn kt-btn-outline" href="#">
          Importer PPM
         </a>
+        <button class="kt-btn kt-btn-primary" data-kt-drawer-toggle="#create_ppm_drawer">
+         Nouveau Projet
+        </button>
         <a class="kt-btn kt-btn-primary" href="#">
          Nouvelle Ligne PPM
         </a>
@@ -126,7 +129,8 @@
                 </span>
                </span>
               </th>
-              <th class="w-[60px]">
+              <th class="w-[120px] text-end">
+               <span class="kt-table-col-label">Actions</span>
               </th>
              </tr>
             </thead>
@@ -162,77 +166,25 @@
               <td class="text-foreground font-normal">
                50.000.000 FCFA
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -267,77 +219,25 @@
               <td class="text-foreground font-normal">
                15.000.000 FCFA
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -372,77 +272,25 @@
               <td class="text-foreground font-normal">
                25.000.000 FCFA
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -480,77 +328,25 @@
               <td class="text-foreground font-normal">
                30.000.000 FCFA
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -588,77 +384,25 @@
               <td class="text-foreground font-normal">
                Month ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -694,77 +438,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 14:23
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -800,77 +492,25 @@
               <td class="text-foreground font-normal">
                Today, 10:12
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -906,77 +546,25 @@
               <td class="text-foreground font-normal">
                Today, 09:45
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1012,77 +600,25 @@
               <td class="text-foreground font-normal">
                Last week
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1116,77 +652,25 @@
               <td class="text-foreground font-normal">
                Current session
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1222,77 +706,25 @@
               <td class="text-foreground font-normal">
                Today, 9:53 am
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1330,77 +762,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 17:45
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1436,77 +816,25 @@
               <td class="text-foreground font-normal">
                Week ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1544,77 +872,25 @@
               <td class="text-foreground font-normal">
                Today, 11:30
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1650,77 +926,25 @@
               <td class="text-foreground font-normal">
                Today, 13:22
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1758,77 +982,25 @@
               <td class="text-foreground font-normal">
                Month ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1864,77 +1036,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 10:50
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -1970,77 +1090,25 @@
               <td class="text-foreground font-normal">
                Current session
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2078,77 +1146,25 @@
               <td class="text-foreground font-normal">
                Today, 14:20
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2180,77 +1196,25 @@
               <td class="text-foreground font-normal">
                Current session
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2286,77 +1250,25 @@
               <td class="text-foreground font-normal">
                Week ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2394,77 +1306,25 @@
               <td class="text-foreground font-normal">
                Week ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2500,77 +1360,25 @@
               <td class="text-foreground font-normal">
                Current session
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2606,77 +1414,25 @@
               <td class="text-foreground font-normal">
                Today, 08:30
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2714,77 +1470,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 12:00
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2822,77 +1526,25 @@
               <td class="text-foreground font-normal">
                Month ago
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -2928,77 +1580,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 16:00
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3032,77 +1632,25 @@
               <td class="text-foreground font-normal">
                Today, 12:45
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3140,77 +1688,25 @@
               <td class="text-foreground font-normal">
                Today, 14:00
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3246,77 +1742,25 @@
               <td class="text-foreground font-normal">
                Current session
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3354,77 +1798,25 @@
               <td class="text-foreground font-normal">
                Today, 11:00
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3460,77 +1852,25 @@
               <td class="text-foreground font-normal">
                Yesterday, 15:30
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3568,77 +1908,25 @@
               <td class="text-foreground font-normal">
                Today, 10:30
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
              <tr>
               <td class="text-center">
@@ -3674,77 +1962,25 @@
               <td class="text-foreground font-normal">
                Today, 13:45
               </td>
-              <td class="text-center">
-               <div class="kt-menu flex-inline" data-kt-menu="true">
-                <div class="kt-menu-item" data-kt-menu-item-offset="0, 10px" data-kt-menu-item-placement="bottom-end" data-kt-menu-item-placement-rtl="bottom-start" data-kt-menu-item-toggle="dropdown" data-kt-menu-item-trigger="click">
-                 <button class="kt-menu-toggle kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost">
-                  <i class="ki-filled ki-dots-vertical text-lg">
-                  </i>
-                 </button>
-                 <div class="kt-menu-dropdown kt-menu-default w-full max-w-[175px]" data-kt-menu-dismiss="true">
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     View
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-file-up">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Export
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-pencil">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Edit
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Make a copy
-                    </span>
-                   </a>
-                  </div>
-                  <div class="kt-menu-separator">
-                  </div>
-                  <div class="kt-menu-item">
-                   <a class="kt-menu-link" href="#">
-                    <span class="kt-menu-icon">
-                     <i class="ki-filled ki-trash">
-                     </i>
-                    </span>
-                    <span class="kt-menu-title">
-                     Remove
-                    </span>
-                   </a>
-                  </div>
-                 </div>
+              <td class="text-end">
+                <div class="flex items-center justify-end gap-1">
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/detail" title="Détails">
+                  <i class="ki-filled ki-search-list text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Publier">
+                  <i class="ki-filled ki-file-up text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="/form" title="Modifier">
+                  <i class="ki-filled ki-pencil text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Dupliquer">
+                  <i class="ki-filled ki-copy text-base"></i>
+                 </a>
+                 <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-clear kt-btn-light" href="#" title="Supprimer">
+                  <i class="ki-filled ki-trash text-base"></i>
+                 </a>
                 </div>
-               </div>
-              </td>
+               </td>
              </tr>
             </tbody>
            </table>
