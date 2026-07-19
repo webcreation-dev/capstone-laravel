@@ -11,21 +11,21 @@
     <div class="kt-container-fixed">
       <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
         <div class="flex flex-col justify-center gap-2">
-          <h1 class="text-xl font-medium leading-none text-mono">Plan de Passation des Marchés (PPM)</h1>
-          <div class="flex items-center flex-wrap gap-1.5 font-medium">
-            <span class="text-base text-secondary-foreground">
-              Total Missions:
-            </span>
-            <span class="text-base text-foreground font-medium me-2">
-              12
-            </span>
-            <span class="text-base text-secondary-foreground">
-              En Cours:
-            </span>
-            <span class="text-base text-foreground font-medium">
-              5
-            </span>
-          </div>
+          <h1 class="text-xl font-medium leading-none text-mono">Liste des Plans de Passation des Marchés </h1>
+          <!-- <div class="flex items-center flex-wrap gap-1.5 font-medium">
+                    <span class="text-base text-secondary-foreground">
+                      Total Missions:
+                    </span>
+                    <span class="text-base text-foreground font-medium me-2">
+                      12
+                    </span>
+                    <span class="text-base text-secondary-foreground">
+                      En Cours:
+                    </span>
+                    <span class="text-base text-foreground font-medium">
+                      5
+                    </span>
+                  </div> -->
         </div>
         <div class="flex items-center gap-2.5">
           <a class="kt-btn kt-btn-outline" href="#">
@@ -76,7 +76,7 @@
                 <button class="kt-btn kt-btn-outline kt-btn-primary">
                   <i class="ki-filled ki-setting-4">
                   </i>
-                  Filters
+                  Filtrer
                 </button>
               </div>
             </div>
@@ -91,41 +91,41 @@
                         <input class="kt-checkbox kt-checkbox-sm" data-kt-datatable-check="true" type="checkbox" />
                       </th>
                       <th class="min-w-[300px]">
-               <span class="kt-table-col">
-                <span class="kt-table-col-label">Nom du dossier</span>
-                <span class="kt-table-col-sort">
-                </span>
-               </span>
-              </th>
-              <th class="min-w-[180px]">
-               <span class="kt-table-col">
-                <span class="kt-table-col-label">Numéro du Prêt / Don</span>
-                <span class="kt-table-col-sort">
-                </span>
-               </span>
-              </th>
-              <th class="min-w-[180px]">
-               <span class="kt-table-col">
-                <span class="kt-table-col-label">Pays / Organe d'exécution</span>
-                <span class="kt-table-col-sort">
-                </span>
-               </span>
-              </th>
-              <th class="min-w-[180px]">
-               <span class="kt-table-col">
-                <span class="kt-table-col-label">Unité de compte (CFA)</span>
-                <span class="kt-table-col-sort">
-                </span>
-               </span>
-              </th>
-              <th class="min-w-[180px]">
-               <span class="kt-table-col">
-                <span class="kt-table-col-label">Statut</span>
-                <span class="kt-table-col-sort">
-                </span>
-               </span>
-              </th>
-              <th class="w-[120px] text-end">
+                        <span class="kt-table-col">
+                          <span class="kt-table-col-label">Nom du dossier</span>
+                          <span class="kt-table-col-sort">
+                          </span>
+                        </span>
+                      </th>
+                      <th class="min-w-[180px]">
+                        <span class="kt-table-col">
+                          <span class="kt-table-col-label">Numéro du Prêt / Don</span>
+                          <span class="kt-table-col-sort">
+                          </span>
+                        </span>
+                      </th>
+                      <th class="min-w-[180px]">
+                        <span class="kt-table-col">
+                          <span class="kt-table-col-label">Pays / Organe d'exécution</span>
+                          <span class="kt-table-col-sort">
+                          </span>
+                        </span>
+                      </th>
+                      <th class="min-w-[180px]">
+                        <span class="kt-table-col">
+                          <span class="kt-table-col-label">Unité de compte (CFA)</span>
+                          <span class="kt-table-col-sort">
+                          </span>
+                        </span>
+                      </th>
+                      <th class="min-w-[180px]">
+                        <span class="kt-table-col">
+                          <span class="kt-table-col-label">Statut</span>
+                          <span class="kt-table-col-sort">
+                          </span>
+                        </span>
+                      </th>
+                      <th class="w-[120px] text-end">
                         <span class="kt-table-col-label">Actions</span>
                       </th>
                     </tr>
@@ -138,28 +138,29 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  S
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            S
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">Sélection cabinet
                               d'audit financier 2026</a>
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary"
                               href="#">PKG-2026-002</a>
-                          
-                </div>
+
+                          </div>
                         </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21006370</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21006370</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -183,29 +184,30 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  A
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            A
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">Assistance
                               technique à la maîtrise d'ouvrage</a>
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               PKG-2026-003
                             </a>
-                          
-                </div>
+
+                          </div>
                         </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21005974</td>
-              <td class="text-foreground font-normal">Togo / MTP</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21005974</td>
+                      <td class="text-foreground font-normal">Togo / MTP</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -229,30 +231,31 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  É
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            É
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">Étude d'impact
                               environnemental (Lot 1)</a>
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary"
                               href="#">PKG-2026-001</a>
-                          
-                </div>
+
+                          </div>
                         </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21005781</td>
-              <td class="text-foreground font-normal">Togo / MTP</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21005781</td>
+                      <td class="text-foreground font-normal">Togo / MTP</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           Publié
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -276,10 +279,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  S
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            S
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Supervision des travaux
@@ -287,20 +291,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               PKG-2026-004
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007137</td>
-              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007137</td>
+                      <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           Évalué
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -324,10 +329,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  L
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            L
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Leslie Alexander
@@ -335,20 +341,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               leslie.alexander@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21003374</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21003374</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -372,10 +379,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               John Smith
@@ -383,18 +391,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               john.smith@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21006359</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21006359</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -418,10 +427,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  E
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            E
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Emily Johnson
@@ -429,18 +439,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               emily.johnson@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21009910</td>
-              <td class="text-foreground font-normal">Togo / MTP</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21009910</td>
+                      <td class="text-foreground font-normal">Togo / MTP</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -464,10 +475,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  M
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            M
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Michael Brown
@@ -475,20 +487,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               michael.brown@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21001882</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21001882</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="size-1.5 rounded-full bg-green-500">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -512,10 +525,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  W
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            W
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               William Davis
@@ -523,18 +537,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               william.davis@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21009673</td>
-              <td class="text-foreground font-normal">Bénin / MEFP</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21009673</td>
+                      <td class="text-foreground font-normal">Bénin / MEFP</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -558,10 +573,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  O
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            O
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Olivia Martinez
@@ -569,18 +585,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               olivia.martinez@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21004265</td>
-              <td class="text-foreground font-normal">Bénin / MEFP</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21004265</td>
+                      <td class="text-foreground font-normal">Bénin / MEFP</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -604,10 +621,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Jacob Jones
@@ -615,18 +633,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               jacob.jones@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21005479</td>
-              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21005479</td>
+                      <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -650,10 +669,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  D
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            D
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Daniel Wilson
@@ -661,20 +681,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               daniel.wilson@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007818</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007818</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -698,10 +719,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  S
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            S
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Sophia Lee
@@ -709,18 +731,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               sophia.lee@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21009957</td>
-              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21009957</td>
+                      <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -744,10 +767,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               James Miller
@@ -755,20 +779,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               james.miller@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21001620</td>
-              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21001620</td>
+                      <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="size-1.5 rounded-full bg-green-500">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -792,10 +817,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  L
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            L
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Linda Scott
@@ -803,18 +829,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               linda.scott@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21008622</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21008622</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -838,10 +865,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  A
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            A
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Anthony Thomas
@@ -849,20 +877,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               anthony.thomas@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21008834</td>
-              <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21008834</td>
+                      <td class="text-foreground font-normal">Côte d'Ivoire / MINADER</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -886,10 +915,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  C
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            C
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Christopher Martinez
@@ -897,18 +927,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               christopher.martinez@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21005961</td>
-              <td class="text-foreground font-normal">Bénin / MEFP</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21005961</td>
+                      <td class="text-foreground font-normal">Bénin / MEFP</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -932,10 +963,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  R
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            R
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Ronald Richards
@@ -943,18 +975,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               ronald.richards@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007625</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007625</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -978,10 +1011,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Jennifer Thomas
@@ -989,20 +1023,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               jennifer.thomas@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21004085</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21004085</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1026,27 +1061,29 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  É
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            É
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">Étude de
                               faisabilité projet hydroélectrique</a>
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary"
                               href="#">PKG-2026-006</a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21002852</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21002852</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1070,10 +1107,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  N
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            N
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Natalie Watson
@@ -1081,18 +1119,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               natalie.watson@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007931</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007931</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1116,10 +1155,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  M
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            M
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Marvin McKinney
@@ -1127,20 +1167,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               marvin.mckenney@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21005714</td>
-              <td class="text-foreground font-normal">Bénin / MEFP</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21005714</td>
+                      <td class="text-foreground font-normal">Bénin / MEFP</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1164,10 +1205,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  T
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            T
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Theresa Webb
@@ -1175,18 +1217,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               theresa.webb@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007417</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007417</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1210,10 +1253,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  B
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            B
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Brian Ross
@@ -1221,18 +1265,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               brian.ross@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21002443</td>
-              <td class="text-foreground font-normal">Bénin / MEFP</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21002443</td>
+                      <td class="text-foreground font-normal">Bénin / MEFP</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1256,10 +1301,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  D
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            D
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Donald Coleman
@@ -1267,20 +1313,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               donald.coleman@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21007826</td>
-              <td class="text-foreground font-normal">Togo / MTP</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21007826</td>
+                      <td class="text-foreground font-normal">Togo / MTP</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1304,10 +1351,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Jason Reed
@@ -1315,20 +1363,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               jason.reed@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21006076</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21006076</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1352,10 +1401,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  P
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            P
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Paul Walker
@@ -1363,18 +1413,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               paul.walker@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21008552</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21008552</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1398,10 +1449,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  A
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            A
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Andrew Mitchell
@@ -1409,18 +1461,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               andrew.mitchell@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21001825</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21001825</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1444,10 +1497,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  K
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            K
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Kevin Evans
@@ -1455,20 +1509,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               kevin.evans@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21008955</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21008955</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1492,10 +1547,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  S
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            S
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Steven Harris
@@ -1503,18 +1559,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               steven.harris@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21001550</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21001550</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1538,10 +1595,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  T
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            T
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Thomas Clark
@@ -1549,20 +1607,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               thomas.clark@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21006296</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">EUR</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21006296</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">EUR</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1586,10 +1645,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Justin Adams
@@ -1597,18 +1657,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               justin.adams@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21009801</td>
-              <td class="text-foreground font-normal">Sénégal / MSAS</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21009801</td>
+                      <td class="text-foreground font-normal">Sénégal / MSAS</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-destructive kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Retard</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1632,10 +1693,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  C
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            C
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Charles Carter
@@ -1643,20 +1705,21 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               charles.carter@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21003627</td>
-              <td class="text-foreground font-normal">Mali / MEN</td>
-              <td class="text-foreground font-normal">USD</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21003627</td>
+                      <td class="text-foreground font-normal">Mali / MEN</td>
+                      <td class="text-foreground font-normal">USD</td>
+                      <td>
                         <span class="kt-badge kt-badge-success kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>
                           In Office
                         </span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1680,10 +1743,11 @@
                       </td>
                       <td>
                         <div class="flex items-center gap-2.5">
-                          <div class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
-                  J
-                </div>
-                <div class="flex flex-col">
+                          <div
+                            class="flex items-center justify-center rounded-full size-9 shrink-0 bg-gray-100 text-gray-600 font-semibold text-sm border border-gray-200">
+                            J
+                          </div>
+                          <div class="flex flex-col">
 
                             <a class="text-sm font-medium text-mono hover:text-primary mb-px" href="#">
                               Jessica Evans
@@ -1691,18 +1755,19 @@
                             <a class="text-sm text-secondary-foreground font-normal hover:text-primary" href="#">
                               jessica.evans@gmail.com
                             </a>
-                          
-                </div></div>
+
+                          </div>
+                        </div>
                       </td>
-              <td class="text-foreground font-normal">PRT-21009162</td>
-              <td class="text-foreground font-normal">Togo / MTP</td>
-              <td class="text-foreground font-normal">FCFA</td>
-              <td>
+                      <td class="text-foreground font-normal">PRT-21009162</td>
+                      <td class="text-foreground font-normal">Togo / MTP</td>
+                      <td class="text-foreground font-normal">FCFA</td>
+                      <td>
                         <span class="kt-badge kt-badge-primary kt-badge-outline rounded-[30px]">
                           <span class="kt-badge-dot size-1.5">
                           </span>Planifié</span>
                       </td>
-              <td class="text-end">
+                      <td class="text-end">
                         <div class="flex items-center justify-end gap-3 text-muted-foreground">
                           <a class="hover:text-primary transition-colors" href="/detail" title="View">
                             <i class="ki-filled ki-search-list text-lg"></i>
@@ -1740,207 +1805,7 @@
             </div>
           </div>
         </div>
-        <div class="kt-card">
-          <div class="kt-card-header">
-            <h3 class="kt-card-title">
-              FAQ
-            </h3>
-          </div>
-          <div class="kt-card-content py-3">
-            <div data-kt-accordion="true" data-kt-accordion-expand-all="true">
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_1_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_1_content">
-                  <span class="text-base text-mono">
-                    How is pricing determined for each plan?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_1_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision. Metronic embraces flexible licensing options that empower you to choose the
-                    perfect fit for your project's needs and budget. Understanding the factors influencing each plan's
-                    pricing helps you make an informed decision. Metronic embraces flexible licensing options that empower
-                    you to choose the perfect fit for your project's needs and budget. Understanding the factors
-                    influencing each plan's pricing helps you make an informed decision
-                  </div>
-                </div>
-              </div>
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_2_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_2_content">
-                  <span class="text-base text-mono">
-                    What payment methods are accepted for subscriptions?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_2_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision
-                  </div>
-                </div>
-              </div>
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_3_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_3_content">
-                  <span class="text-base text-mono">
-                    Are there any hidden fees in the pricing?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_3_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision
-                  </div>
-                </div>
-              </div>
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_4_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_4_content">
-                  <span class="text-base text-mono">
-                    Is there a discount for annual subscriptions?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_4_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision
-                  </div>
-                </div>
-              </div>
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_5_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_5_content">
-                  <span class="text-base text-mono">
-                    Do you offer refunds on subscription cancellations?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_5_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision
-                  </div>
-                </div>
-              </div>
-              <div class="kt-accordion-item not-last:border-b border-b-border" data-kt-accordion-item="true">
-                <button aria-controls="faq_6_content" class="kt-accordion-toggle py-4"
-                  data-kt-accordion-toggle="#faq_6_content">
-                  <span class="text-base text-mono">
-                    Can I add extra features to my current plan?
-                  </span>
-                  <span class="kt-accordion-active:hidden inline-flex">
-                    <i class="ki-filled ki-plus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                  <span class="kt-accordion-active:inline-flex hidden">
-                    <i class="ki-filled ki-minus text-muted-foreground text-sm">
-                    </i>
-                  </span>
-                </button>
-                <div class="kt-accordion-content hidden" id="faq_6_content">
-                  <div class="text-secondary-foreground text-base pb-4">
-                    Metronic embraces flexible licensing options that empower you to choose the perfect fit for your
-                    project's needs and budget. Understanding the factors influencing each plan's pricing helps you make
-                    an informed decision
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-5 lg:gap-7.5">
-          <div class="kt-card">
-            <div class="kt-card-content px-10 py-7.5 lg:pr-12.5">
-              <div class="flex flex-wrap md:flex-nowrap items-center gap-6 md:gap-10">
-                <div class="flex flex-col items-start gap-3">
-                  <h2 class="text-xl font-medium text-mono">
-                    Questions ?
-                  </h2>
-                  <p class="text-sm text-foreground leading-5.5 mb-2.5">
-                    Visit our Help Center for detailed assistance on billing, payments, and subscriptions.
-                  </p>
-                </div>
-                <img alt="image" class="dark:hidden max-h-[150px]"
-                  src="{{ asset('assets/media/illustrations/29.svg') }}" />
-                <img alt="image" class="light:hidden max-h-[150px]"
-                  src="{{ asset('assets/media/illustrations/29-dark.svg') }}" />
-              </div>
-            </div>
-            <div class="kt-card-footer justify-center">
-              <a class="kt-link kt-link-underlined kt-link-dashed" href="">
-                Go to Help Center
-              </a>
-            </div>
-          </div>
-          <div class="kt-card">
-            <div class="kt-card-content px-10 py-7.5 lg:pr-12.5">
-              <div class="flex flex-wrap md:flex-nowrap items-center gap-6 md:gap-10">
-                <div class="flex flex-col items-start gap-3">
-                  <h2 class="text-xl font-medium text-mono">
-                    Contact Support
-                  </h2>
-                  <p class="text-sm text-foreground leading-5.5 mb-2.5">
-                    Need assistance? Contact our support team for prompt, personalized help your queries & concerns.
-                  </p>
-                </div>
-                <img alt="image" class="dark:hidden max-h-[150px]"
-                  src="{{ asset('assets/media/illustrations/31.svg') }}" />
-                <img alt="image" class="light:hidden max-h-[150px]"
-                  src="{{ asset('assets/media/illustrations/31-dark.svg') }}" />
-              </div>
-            </div>
-            <div class="kt-card-footer justify-center">
-              <a class="kt-link kt-link-underlined kt-link-dashed" href="https://devs.keenthemes.com/unresolved">
-                Contact Support
-              </a>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
     <!-- End of Container -->
