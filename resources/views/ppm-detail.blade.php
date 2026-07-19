@@ -14,9 +14,9 @@
                             </div> -->
                         </div>
                         <div class="flex items-center gap-2.5">
-                            <a href="/form" class="kt-btn kt-btn-outline">
+                            <button class="kt-btn kt-btn-outline" data-kt-drawer-toggle="#add_spm_drawer">
                                 <i class="ki-filled ki-plus"></i> Ajouter un SPM
-                            </a>
+                            </button>
                             <button class="kt-btn kt-btn-primary">
                                 <i class="ki-filled ki-check"></i> Publier le PPM
                             </button>

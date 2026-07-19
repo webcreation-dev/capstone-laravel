@@ -1676,3 +1676,104 @@
     </div>
 </div>
 <!-- End of Create PPM Drawer -->
+
+<!-- Add SPM Drawer -->
+<div class="hidden kt-drawer kt-drawer-end flex-col top-0 bottom-0 end-0 bg-background border-l border-border"
+    style="width: 65%; max-width: 95%;"
+    data-kt-drawer="true" data-kt-drawer-container="body" id="add_spm_drawer">
+    <div class="flex items-center justify-between gap-2.5 text-xl font-medium leading-none text-mono px-5 py-5 border-b border-b-border"
+        id="add_spm_header">
+        Nouvelle Ligne PPM
+        <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-dim shrink-0"
+            data-kt-drawer-dismiss="true">
+            <i class="ki-filled ki-cross"></i>
+        </button>
+    </div>
+    
+    <div class="kt-scrollable grow kt-scrollable-y p-5 lg:p-7.5 bg-secondary/30" data-kt-scrollable="true" data-kt-scrollable-dependencies="#add_spm_header, #add_spm_footer" data-kt-scrollable-offset="0px">
+       <div class="flex grow gap-5 lg:gap-7.5">
+       <div class="hidden lg:block w-[230px] shrink-0">
+        <div class="w-[230px]">
+         <div class="flex flex-col grow relative before:absolute before:left-[11px] before:top-0 before:bottom-0 before:border-l before:border-border" data-kt-scrollspy="true" data-kt-scrollspy-offset="110px" data-kt-scrollspy-target="body">
+          <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 active border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#basic_settings">
+           <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary">
+           </span>Information Package
+          </a>
+          <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#lots_associes">
+           <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary">
+           </span>Lots associés
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col items-stretch grow gap-5 lg:gap-7.5">
+         <!-- Card 1: Information Package -->
+         <div class="kt-card pb-2.5">
+          <div class="kt-card-header" id="basic_settings">
+           <h3 class="kt-card-title">Information Package</h3>
+          </div>
+          <div class="kt-card-content grid gap-5">
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Type de Package
+             </label>
+             <select class="kt-select" data-kt-select="true">
+              <option value="" disabled selected>Sélectionner le type</option>
+              <option value="travaux">Travaux</option>
+              <option value="biens">Biens</option>
+              <option value="consultants">Consultants</option>
+             </select>
+            </div>
+           </div>
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">Description du package</label>
+             <textarea class="kt-input min-h-[100px] w-full" placeholder="Détails de la mission ou du package..."></textarea>
+            </div>
+           </div>
+          </div>
+         </div>
+
+         <!-- Card 2: Lots associés -->
+         <div class="kt-card pb-2.5">
+          <div class="kt-card-header" id="lots_associes">
+           <h3 class="kt-card-title">Lots associés</h3>
+          </div>
+          <div class="kt-card-content grid gap-5 pt-7.5">
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Nom du lot
+             </label>
+             <input class="kt-input" type="text" placeholder="Ex: Lot 1 - Étude d'impact..." />
+            </div>
+           </div>
+           <div class="w-full">
+            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+             <label class="kt-form-label flex items-center gap-1 max-w-56">
+              Description du Lot
+             </label>
+             <textarea class="kt-input min-h-[100px] w-full" placeholder="Détails du lot..."></textarea>
+            </div>
+           </div>
+           
+           <div class="flex items-center pt-2.5">
+            <button class="kt-btn kt-btn-outline kt-btn-primary">
+             <i class="ki-filled ki-plus"></i>
+             Ajouter un lot
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="flex items-center justify-end gap-2.5 px-5 py-4 border-t border-t-border" id="add_spm_footer">
+        <button class="kt-btn kt-btn-light" data-kt-drawer-dismiss="true">Annuler</button>
+        <button class="kt-btn kt-btn-primary">Enregistrer le tout</button>
+    </div>
+</div>
+<!-- End of Add SPM Drawer -->
