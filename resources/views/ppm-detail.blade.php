@@ -246,7 +246,7 @@
                                                             {{ $lot['contract_amount'] ? number_format($lot['contract_amount'], 0, ',', ' ') : '-' }}
                                                         </td>
                                                     @endif
-                                                    <td class="p-2 cell-hover-container relative group/cell">
+                                                    <td class="p-2 cell-hover-container group/cell">
                                                         <div class="flex items-center justify-between gap-2 h-full min-h-[40px]">
                                                             @if(isset($lot['dates'][$milestone][$catKey]['date_value']))
                                                                 <div class="flex flex-col items-start gap-1">
