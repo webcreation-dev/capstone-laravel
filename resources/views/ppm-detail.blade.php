@@ -270,9 +270,9 @@
                                                                     <i class="ki-filled ki-eye text-xs"></i>
                                                                 </button>
                                                             @else
-                                                                <span class="text-sm text-muted-foreground">-</span>
+                                                                <span></span>
                                                                 <button
-                                                                    class="edit-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 kt-btn kt-btn-xs kt-btn-icon kt-btn-primary rounded-full shadow-sm"
+                                                                    class="edit-btn kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost text-muted-foreground hover:text-primary shrink-0"
                                                                     title="Ajouter une date"
                                                                     data-kt-drawer-toggle="#date_details_drawer"
                                                                     onclick="openDateModal(this, 'add')"
@@ -280,7 +280,7 @@
                                                                     data-lot="{{ $lot['name'] }}"
                                                                     data-milestone="{{ $milestone }}"
                                                                     data-category="{{ $catMeta['label'] }}">
-                                                                    <i class="ki-filled ki-plus text-xs"></i>
+                                                                    <i class="ki-filled ki-pencil text-xs"></i>
                                                                 </button>
                                                             @endif
                                                         </div>
