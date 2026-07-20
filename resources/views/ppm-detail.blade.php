@@ -75,8 +75,8 @@
                                     <th
                                         class="sticky left-[250px] top-0 bg-gray-100 z-[32] w-[200px] min-w-[200px] max-w-[200px] whitespace-normal border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
                                         Description du Package</th>
-                                    <th
-                                        class="sticky left-[450px] top-0 bg-gray-100 z-[31] w-[80px] min-w-[80px] max-w-[80px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
+                                    <th style="left: 450px;"
+                                        class="sticky top-0 bg-gray-100 z-[31] w-[80px] min-w-[80px] max-w-[80px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
                                         Lot</th>
                                     <th
                                         class="bg-gray-100 min-w-[200px] whitespace-normal border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
@@ -166,7 +166,7 @@
 
                                     @forelse($line['lots'] as $lotIdx => $lot)
                                         @foreach($dateCategories as $catKey => $catMeta)
-                                            <tr class="group hover:bg-light/50 relative border-b border-gray-200">
+                                            <tr class="group hover:bg-light/50 border-b border-gray-200">
 
                                                 @if($lotIdx === 0 && $loop->first)
                                                     <!-- Début SPM -->
@@ -187,7 +187,7 @@
 
                                                 @if($loop->first)
                                                     <!-- Début Lot -->
-                                                    <td class="sticky left-[450px] bg-white group-hover:bg-gray-50 z-[11] font-bold border-r-2 border-gray-400 w-[80px] min-w-[80px] max-w-[80px] col-separator"
+                                                    <td style="left: 450px;" class="sticky bg-white group-hover:bg-gray-50 z-[11] font-bold border-r-2 border-gray-400 w-[80px] min-w-[80px] max-w-[80px] col-separator"
                                                         rowspan="3">
                                                         {{ $lot['name'] }}
                                                     </td>
@@ -246,7 +246,7 @@
                                         @endforeach
                                     @empty
                                         <!-- Pas de lots pour cette ligne -->
-                                        <tr class="group hover:bg-light/50 relative border-b border-gray-200">
+                                        <tr class="group hover:bg-light/50 border-b border-gray-200">
                                             <td class="sticky left-0 bg-white z-[14] font-bold text-sm border-r border-gray-300">
                                                 {{ $line['system_type'] }}</td>
                                             <td class="sticky left-[150px] bg-white z-[13] font-bold border-r border-gray-300">
