@@ -280,9 +280,11 @@
                                                                     data-id="{{ $lot['dates'][$milestone][$catKey]['id'] ?? '' }}"
                                                                     data-spm="{{ $line['system_type'] }}"
                                                                     data-lot="{{ $lot['name'] }}"
+                                                                    data-lot-id="{{ $lot['id'] }}"
                                                                     data-milestone="{{ $milestone }}"
                                                                     data-milestone-label="{{ $milestoneLabels[$milestone] ?? $milestone }}"
                                                                     data-category="{{ $catMeta['label'] }}"
+                                                                    data-cat-key="{{ $catKey }}"
                                                                     data-date="{{ $lot['dates'][$milestone][$catKey]['date_value'] }}">
                                                                     <i class="ki-filled ki-eye text-xs"></i>
                                                                 </button>
@@ -295,8 +297,10 @@
                                                                     onclick="openDateModal(this, 'add')"
                                                                     data-spm="{{ $line['system_type'] }}"
                                                                     data-lot="{{ $lot['name'] }}"
+                                                                    data-lot-id="{{ $lot['id'] }}"
                                                                     data-milestone="{{ $milestone }}"
                                                                     data-milestone-label="{{ $milestoneLabels[$milestone] ?? $milestone }}"
+                                                                    data-cat-key="{{ $catKey }}"
                                                                     data-category="{{ $catMeta['label'] }}">
                                                                     <i class="ki-filled ki-pencil text-xs"></i>
                                                                 </button>
