@@ -1604,10 +1604,10 @@
                                         <!-- Bloc Contexte -->
                                         <div class="px-5">
                                             <div class="bg-light/50 p-4 rounded-lg border border-border">
-                                                <div class="text-sm font-semibold text-secondary-foreground mb-1">
-                                                    SPM-TRVX-1 > T-01 > Révisé 2
+                                                <div class="text-sm font-semibold text-secondary-foreground mb-2" id="date_modal_context_path_doc">
+                                                    SPM-TRVX-1 &gt; T-01 &gt; Révisé 2
                                                 </div>
-                                                <div class="text-xs text-muted-foreground">
+                                                <div class="text-sm text-gray-900 font-medium" id="date_modal_date_text_doc">
                                                     Date de soumission : 03 Juillet 2027
                                                 </div>
                                             </div>

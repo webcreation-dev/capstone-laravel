@@ -14,6 +14,7 @@ Route::post('/ppm-lots/save', [PpmController::class, 'saveLot']);
 Route::get('/ppm-lot-dates/{id}/details', [PpmController::class, 'getDateDetails']);
 Route::post('/ppm-lot-dates/save', [PpmController::class, 'saveDate']);
 Route::post('/ppm-lot-dates/{id}/comments', [PpmController::class, 'addComment']);
+Route::post('/ppm-lot-dates/{id}/documents', [PpmController::class, 'uploadDocument']);
 Route::put('/ppm-lot-date-comments/{id}', [PpmController::class, 'updateComment']);
 Route::delete('/ppm-lot-date-comments/{id}', [PpmController::class, 'deleteComment']);
 

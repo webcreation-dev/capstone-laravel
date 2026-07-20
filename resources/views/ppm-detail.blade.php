@@ -718,11 +718,17 @@
                     window.currentMilestone = milestone;
                     window.currentDateButton = button;
                     
-                    // Mettre à jour le fil d'ariane
                     const contextPath = document.getElementById('date_modal_context_path');
+                    const contextPathDoc = document.getElementById('date_modal_context_path_doc');
+                    const catKey = window.currentCatKey;
+                    const catColor = catKey === 'plan' ? 'kt-badge-light' : (catKey === 'revised' ? 'kt-badge-warning' : 'kt-badge-success');
+                    const breadcrumbHTML = `${spm} &gt; ${lot} &gt; <span class="kt-badge kt-badge-sm ${catColor} ml-1">${category}</span>`;
+                    
                     if (contextPath) {
-                        const catColor = window.currentCatKey === 'plan' ? 'kt-badge-light' : (window.currentCatKey === 'revised' ? 'kt-badge-warning' : 'kt-badge-success');
-                        contextPath.innerHTML = `${spm} &gt; ${lot} &gt; <span class="kt-badge kt-badge-sm ${catColor} ml-1">${category}</span>`;
+                        contextPath.innerHTML = breadcrumbHTML;
+                    }
+                    if (contextPathDoc) {
+                        contextPathDoc.innerHTML = breadcrumbHTML;
                     }
 
                     // Mettre à jour le titre du modal
@@ -734,6 +740,7 @@
                     const viewMode = document.getElementById('date_modal_view_mode');
                     const editMode = document.getElementById('date_modal_edit_mode');
                     const dateText = document.getElementById('date_modal_date_text');
+                    const dateTextDoc = document.getElementById('date_modal_date_text_doc');
                     const dateInput = document.getElementById('date_modal_input');
                     const inputLabel = document.getElementById('date_modal_input_label');
                     const cancelBtn = document.getElementById('date_modal_cancel_btn');
@@ -756,10 +763,15 @@
                         if (existingDate) {
                             const d = new Date(existingDate);
                             const options = { day: '2-digit', month: 'long', year: 'numeric' };
-                            dateText.innerHTML = `Date enregistrée : ${d.toLocaleDateString('fr-FR', options)}`;
+                            const text = `Date enregistrée : ${d.toLocaleDateString('fr-FR', options)}`;
+                            dateText.innerHTML = text;
+                            if (dateTextDoc) dateTextDoc.innerHTML = text;
                             dateInput.value = existingDate.substring(0, 10);
                         } else {
-                            dateText.innerHTML = `Date de ${category.toLowerCase()} : Non définie`;
+                            const text = `Date de ${category.toLowerCase()} : Non définie`;
+                            dateText.innerHTML = text;
+                            if (dateTextDoc) dateTextDoc.innerHTML = text;
+                            dateInput.value = '';
                         }
                         
                         if (dateId) {
@@ -895,7 +907,7 @@
 
                 function saveModalDate() {
                     const dateValue = document.getElementById('date_modal_input').value;
-                    if (!dateValue || !window.currentDateId) {
+                    if (!dateValue || (!window.currentDateId && !window.currentLotId)) {
                         Swal.fire({
                             toast: true,
                             position: 'top-end',
@@ -915,6 +927,9 @@
                         },
                         body: JSON.stringify({
                             id: window.currentDateId,
+                            ppm_lot_id: window.currentLotId,
+                            milestone_type: window.currentMilestone,
+                            date_category: window.currentCatKey,
                             date_value: dateValue
                         })
                     })
@@ -929,10 +944,63 @@
                                 showConfirmButton: false,
                                 timer: 3000
                             });
+
+                            const d = new Date(data.date_value);
+                            const textOptions = { day: '2-digit', month: 'long', year: 'numeric' };
+                            const newText = `Date enregistrée : ${d.toLocaleDateString('fr-FR', textOptions)}`;
+                            document.getElementById('date_modal_date_text').innerHTML = newText;
+                            const docDateText = document.getElementById('date_modal_date_text_doc');
+                            if (docDateText) docDateText.innerHTML = newText;
                             
-                            setTimeout(() => {
-                                location.reload();
-                            }, 1000);
+                            window.currentDateId = data.date.id; // maj de l'id si création
+                            
+                            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+                            const formattedDate = d.toLocaleDateString('fr-FR', options).replace('.', '');
+                            
+                            const container = window.currentDateButton.closest('.flex.items-center.justify-between.gap-2') || window.currentDateButton.closest('div');
+                            if (container) {
+                                if (window.currentDateButton.classList.contains('edit-btn')) {
+                                    // Mode création : on transforme le contenu de la cellule
+                                    const catLabel = window.currentDateButton.getAttribute('data-category');
+                                    const catColor = window.currentCatKey === 'plan' ? 'kt-badge-light' : (window.currentCatKey === 'revised' ? 'kt-badge-warning' : 'kt-badge-success');
+                                    
+                                    container.innerHTML = `
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="text-sm font-medium">
+                                                ${formattedDate}
+                                            </span>
+                                            <span class="kt-badge kt-badge-sm ${catColor}">
+                                                ${catLabel}
+                                            </span>
+                                        </div>
+                                        <button
+                                            class="kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost opacity-50 hover:opacity-100 shrink-0"
+                                            title="Voir commentaires et fichiers"
+                                            data-kt-drawer-toggle="#date_details_drawer"
+                                            onclick="openDateModal(this, 'view')"
+                                            data-id="${data.date.id}"
+                                            data-lot-id="${window.currentLotId}"
+                                            data-cat-key="${window.currentCatKey}"
+                                            data-spm="${window.currentDateButton.getAttribute('data-spm')}"
+                                            data-lot="${window.currentDateButton.getAttribute('data-lot')}"
+                                            data-milestone="${window.currentMilestone}"
+                                            data-milestone-label="${window.currentDateButton.getAttribute('data-milestone-label')}"
+                                            data-category="${catLabel}"
+                                            data-date="${data.date_value}">
+                                            <i class="ki-filled ki-eye text-xs"></i>
+                                        </button>
+                                    `;
+                                    // Mettre à jour le bouton actuel au cas où on reclique
+                                    window.currentDateButton = container.querySelector('button');
+                                    KTDrawer.createInstances();
+                                } else {
+                                    // Mode update
+                                    const span = container.querySelector('span.text-sm');
+                                    if (span) span.innerHTML = formattedDate;
+                                    window.currentDateButton.setAttribute('data-date', data.date_value);
+                                }
+                            }
+                            cancelDateEditMode();
                         }
                     })
                     .catch(error => console.error('Erreur:', error));
