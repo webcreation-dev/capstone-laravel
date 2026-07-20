@@ -790,6 +790,41 @@
                     if (docsContainer) docsContainer.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun document joint.</div>';
                 }
                 
+                document.getElementById('file_upload_input').addEventListener('change', function(e) {
+                    const files = e.target.files;
+                    if (!files.length) return;
+                    if (!window.currentDateId) {
+                        Swal.fire({
+                            toast: true, position: 'top-end', icon: 'warning', title: 'Veuillez d\'abord enregistrer la date.', showConfirmButton: false, timer: 3000
+                        });
+                        return;
+                    }
+                    
+                    const formData = new FormData();
+                    for(let i=0; i<files.length; i++) {
+                        formData.append('files[]', files[i]);
+                    }
+                    
+                    fetch(`/ppm-lot-dates/${window.currentDateId}/documents`, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            fetchDateDetails(window.currentDateId); // Recharge les documents
+                            document.getElementById('file_upload_input').value = ''; // Reset input
+                            Swal.fire({
+                                toast: true, position: 'top-end', icon: 'success', title: data.message, showConfirmButton: false, timer: 3000
+                            });
+                        }
+                    })
+                    .catch(error => console.error('Erreur:', error));
+                });
+                
                 function fetchDateDetails(dateId) {
                     fetch(`/ppm-lot-dates/${dateId}/details`)
                         .then(response => response.json())
@@ -864,29 +899,90 @@
                     }
                     
                     container.innerHTML = documents.map(doc => {
-                        let icon = 'ki-file';
-                        if (doc.type === 'pdf') icon = 'ki-file-pdf text-danger';
-                        else if (doc.type === 'docx' || doc.type === 'doc') icon = 'ki-file-doc text-primary';
-                        else if (doc.type === 'xlsx' || doc.type === 'xls') icon = 'ki-file-sheet text-success';
-                        else if (['png', 'jpg', 'jpeg'].includes(doc.type)) icon = 'ki-picture text-info';
+                        let iconSrc = "{{ asset('assets/media/file-types/blank.svg') }}";
+                        const ext = (doc.type || '').toLowerCase();
+                        if(['pdf'].includes(ext)) iconSrc = "{{ asset('assets/media/file-types/pdf.svg') }}";
+                        else if(['xls','xlsx','csv'].includes(ext)) iconSrc = "{{ asset('assets/media/file-types/xls.svg') }}";
+                        else if(['doc','docx'].includes(ext)) iconSrc = "{{ asset('assets/media/file-types/doc.svg') }}";
+                        else if(['jpg','jpeg','png','gif','svg'].includes(ext)) iconSrc = "{{ asset('assets/media/file-types/image.svg') }}";
+                        else if(['zip','rar','tar','gz'].includes(ext)) iconSrc = "{{ asset('assets/media/file-types/zip.svg') }}";
+                        
+                        // Parse date
+                        const d = new Date(doc.created_at);
+                        const dateOptions = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                        const dateStr = d.toLocaleDateString('fr-FR', dateOptions).replace(',', '');
                         
                         return `
-                        <div class="flex items-center justify-between p-3 border border-border rounded-lg mb-2 hover:bg-light/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded bg-light flex items-center justify-center">
-                                    <i class="ki-filled ${icon} text-2xl"></i>
-                                </div>
-                                <div class="flex flex-col">
-                                    <a href="#" class="text-sm font-semibold text-gray-900 hover:text-primary transition-colors">${doc.name}</a>
-                                    <span class="text-xs text-muted-foreground">${Math.round((doc.size || 0) / 1024)} KB</span>
-                                </div>
-                            </div>
-                            <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light hover:text-primary shrink-0" title="Télécharger">
-                                <i class="ki-filled ki-down"></i>
-                            </button>
-                        </div>
-                    `}).join('');
+                                        <div class="flex grow gap-2.5 px-0 py-2 border-b border-b-border last:border-0">
+                                            <div class="kt-avatar size-10">
+                                                <img class="h-10" src="${iconSrc}" onerror="this.src='{{ asset('assets/media/file-types/blank.svg') }}'" />
+                                            </div>
+                                            <div class="flex flex-col gap-1 grow">
+                                                <div class="flex items-center justify-between">
+                                                    <a class="hover:text-primary font-medium text-secondary-foreground text-sm truncate max-w-[200px]"
+                                                        href="/storage/${doc.path}" target="_blank">
+                                                        ${doc.name}
+                                                    </a>
+                                                    <div class="flex gap-1 shrink-0">
+                                                        <a href="/storage/${doc.path}" download class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm" title="Télécharger">
+                                                            <i class="ki-filled ki-download text-muted-foreground"></i>
+                                                        </a>
+                                                        <button class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm text-danger hover:bg-danger-light" title="Supprimer" onclick="deleteDocument(${doc.id})">
+                                                            <i class="ki-filled ki-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center gap-2 text-xs text-muted-foreground">
+                                                    <span>${Math.round((doc.size || 0) / 1024)} KB</span>
+                                                    <span class="rounded-full size-1 bg-mono/30"></span>
+                                                    <span>Ajouté par un utilisateur</span>
+                                                    <span class="rounded-full size-1 bg-mono/30"></span>
+                                                    <span>${dateStr}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                        `;
+                    }).join('');
                 }
+                
+                window.deleteDocument = function(docId) {
+                    Swal.fire({
+                        title: 'Êtes-vous sûr ?',
+                        text: "Voulez-vous vraiment supprimer ce document ?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#ef4444',
+                        cancelButtonColor: '#64748b',
+                        confirmButtonText: 'Oui, supprimer !',
+                        cancelButtonText: 'Annuler'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            fetch(`/ppm-lot-dates/documents/${docId}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    Swal.fire({
+                                        toast: true,
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: data.message,
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+                                    if(window.currentDateId) {
+                                        fetchDateDetails(window.currentDateId);
+                                    }
+                                }
+                            })
+                            .catch(error => console.error('Erreur:', error));
+                        }
+                    });
+                };
 
                 function toggleDateEditMode() {
                     document.getElementById('date_modal_view_mode').classList.add('hidden');

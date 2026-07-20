@@ -204,7 +204,6 @@ class PpmController extends Controller
         $date = \App\Models\PpmLotDate::findOrFail($id);
         $comment = $date->comments()->create([
             'content' => $validated['content'],
-            // On associe un user_id si on a l'auth, pour le moment on peut le laisser null si la db le permet
             // 'user_id' => auth()->id() ?? null,
         ]);
 
@@ -212,6 +211,37 @@ class PpmController extends Controller
             'success' => true,
             'message' => 'Commentaire ajouté avec succès.',
             'comment' => $comment
+        ]);
+    }
+
+    public function uploadDocument(Request $request, $id)
+    {
+        $request->validate([
+            'files.*' => 'required|file|max:10240' // 10MB
+        ]);
+
+        $date = \App\Models\PpmLotDate::findOrFail($id);
+        
+        $uploadedDocs = [];
+        
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
+                $path = $file->store('ppm_documents', 'public');
+                $doc = $date->documents()->create([
+                    'name' => $file->getClientOriginalName(),
+                    'path' => $path,
+                    'type' => $file->getClientOriginalExtension(),
+                    'size' => $file->getSize(),
+                    // 'user_id' => auth()->id() ?? null,
+                ]);
+                $uploadedDocs[] = $doc;
+            }
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Fichier(s) ajouté(s) avec succès.',
+            'documents' => $uploadedDocs
         ]);
     }
 
@@ -238,7 +268,21 @@ class PpmController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Commentaire supprimé avec succès.'
+            'message' => 'Commentaire supprimé.'
+        ]);
+    }
+
+    public function deleteDocument($id)
+    {
+        $document = \App\Models\PpmLotDateDocument::findOrFail($id);
+        if (\Storage::disk('public')->exists($document->path)) {
+            \Storage::disk('public')->delete($document->path);
+        }
+        $document->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Document supprimé.'
         ]);
     }
 }

@@ -1639,38 +1639,6 @@
                                             <div class="text-sm text-muted-foreground italic">Chargement des documents...</div>
                                         </div>
 
-                                        <div class="border-b border-b-border"></div>
-
-                                        <!-- Document 3 -->
-                                        <div class="flex grow gap-2.5 px-5">
-                                            <div class="kt-avatar size-10">
-                                                <img class="h-10" src="{{ asset('assets/media/file-types/xls.svg') }}" />
-                                            </div>
-                                            <div class="flex flex-col gap-1 grow">
-                                                <div class="flex items-center justify-between">
-                                                    <a class="hover:text-primary font-medium text-secondary-foreground text-sm"
-                                                        href="#">
-                                                        budget_previsionnel.xlsx
-                                                    </a>
-                                                    <div class="flex gap-1">
-                                                        <button class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm">
-                                                            <i class="ki-filled ki-download"></i>
-                                                        </button>
-                                                        <button
-                                                            class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm text-danger">
-                                                            <i class="ki-filled ki-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                                                    <span>856 KB</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>Ajouté par Jean Dupont</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>04 Juil 2027, 09:15</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="border-b border-b-border"></div>
