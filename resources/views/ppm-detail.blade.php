@@ -27,6 +27,10 @@
 
 
         <!-- Main Layout Container (Table + Timeline Side by Side) -->
+        <style>
+            .cell-hover-container .edit-btn { opacity: 0; transition: opacity 0.2s; }
+            .cell-hover-container:hover .edit-btn { opacity: 1; }
+        </style>
         <div class="kt-container-fluid flex items-start gap-5 transition-all duration-300 relative">
             <!-- Main Table Container -->
             <div class="kt-card grow min-w-0 overflow-hidden rounded-none bg-white" style="border-radius: 0 !important;"
@@ -170,10 +174,20 @@
 
                                                 @if($lotIdx === 0 && $loop->first)
                                                     <!-- Début SPM -->
-                                                    <td class="sticky left-0 bg-white group-hover:bg-gray-50 z-[14] font-bold text-sm border-r border-gray-300 w-[150px] min-w-[150px] max-w-[150px]"
+                                                    <td class="cell-hover-container relative sticky left-0 bg-white group-hover:bg-gray-50 z-[14] font-bold text-sm border-r border-gray-300 w-[150px] min-w-[150px] max-w-[150px]"
                                                         rowspan="{{ $lineRowSpan }}">
                                                         {{ $line['system_type'] }}
                                                         <!-- <br><span class="text-xs font-normal text-muted-foreground">{{ $line['package_type'] }}</span> -->
+                                                        <!-- Bouton d'édition au survol -->
+                                                        <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
+                                                                data-kt-drawer-toggle="#add_spm_drawer"
+                                                                data-spm-id="{{ $line['id'] }}"
+                                                                data-spm-system-type="{{ $line['system_type'] }}"
+                                                                data-spm-package-type="{{ $line['package_type'] }}"
+                                                                data-spm-description="{{ $line['package_description'] }}"
+                                                                title="Modifier le SPM">
+                                                            <i class="ki-filled ki-pencil text-lg"></i>
+                                                        </button>
                                                     </td>
                                                     <td class="sticky left-[150px] bg-white group-hover:bg-gray-50 z-[13] font-bold border-r border-gray-300 w-[100px] min-w-[100px] max-w-[100px]"
                                                         rowspan="{{ $lineRowSpan }}">
@@ -247,8 +261,19 @@
                                     @empty
                                         <!-- Pas de lots pour cette ligne -->
                                         <tr class="group hover:bg-light/50 border-b border-gray-200">
-                                            <td class="sticky left-0 bg-white z-[14] font-bold text-sm border-r border-gray-300">
-                                                {{ $line['system_type'] }}</td>
+                                            <td class="cell-hover-container relative sticky left-0 bg-white z-[14] font-bold text-sm border-r border-gray-300">
+                                                {{ $line['system_type'] }}
+                                                <!-- Bouton d'édition au survol -->
+                                                <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
+                                                        data-kt-drawer-toggle="#add_spm_drawer"
+                                                        data-spm-id="{{ $line['id'] }}"
+                                                        data-spm-system-type="{{ $line['system_type'] }}"
+                                                        data-spm-package-type="{{ $line['package_type'] }}"
+                                                        data-spm-description="{{ $line['package_description'] }}"
+                                                        title="Modifier le SPM">
+                                                    <i class="ki-filled ki-pencil text-lg"></i>
+                                                </button>
+                                            </td>
                                             <td class="sticky left-[150px] bg-white z-[13] font-bold border-r border-gray-300">
                                                 {{ $line['package_number'] }}</td>
                                             <td class="sticky left-[250px] bg-white z-[12] font-medium border-r-2 border-gray-400">
