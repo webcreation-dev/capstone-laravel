@@ -45,9 +45,6 @@
                                             <th colspan="11"
                                                 class="border-r-2 border-b-2 border-black text-center font-bold py-3 px-3 text-sm uppercase tracking-wide">
                                                 Informations de Base</th>
-                                            <th colspan="1"
-                                                class="border-b-2 border-r-2 border-black text-center font-bold py-3 px-3 text-sm uppercase tracking-wide">
-                                                Suivi</th>
                                             <th colspan="2"
                                                 class="border-b-2 border-r-2 border-black text-center font-bold py-3 px-3 text-sm uppercase tracking-wide">
                                                 Dossier d'Appel d'Offres</th>
@@ -97,9 +94,6 @@
                                             <th
                                                 class="min-w-[150px] border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
                                                 Contrôle et Audit</th>
-                                            <th
-                                                class="min-w-[150px] border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
-                                                Type de Suivi</th>
 
                                             <th
                                                 class="min-w-[150px] border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
@@ -199,14 +193,6 @@
                                                             <td class="text-muted-foreground" rowspan="3">{{ $lot['qualification_type'] ?: '-' }}</td>
                                                             <td class="text-muted-foreground" rowspan="3">{{ $lot['control_audit'] ?: '-' }}</td>
                                                         @endif
-                                                        
-                                                        <!-- Type de suivi -->
-                                                        <td class="border-r">
-                                                            <div class="flex items-center gap-2">
-                                                                <i class="ki-filled ki-calendar text-gray-400"></i>
-                                                                <span class="kt-badge kt-badge-sm {{ $catMeta['color'] }}">{{ $catMeta['label'] }}</span>
-                                                            </div>
-                                                        </td>
                                                         
                                                         <!-- Dates (9 colonnes) -->
                                                         @foreach($milestoneTypes as $milestone)
