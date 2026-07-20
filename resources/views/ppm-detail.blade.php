@@ -395,10 +395,10 @@
                     document.addEventListener('fullscreenchange', function () {
                         if (document.fullscreenElement) {
                             iconFullscreen.classList.remove('ki-maximize');
-                            iconFullscreen.classList.add('ki-minimize');
+                            iconFullscreen.classList.add('ki-arrow-down-left');
                             tableCard.classList.add('overflow-y-auto');
                         } else {
-                            iconFullscreen.classList.remove('ki-minimize');
+                            iconFullscreen.classList.remove('ki-arrow-down-left');
                             iconFullscreen.classList.add('ki-maximize');
                             tableCard.classList.remove('overflow-y-auto');
                         }
