@@ -1533,13 +1533,31 @@
                                     <div class="grow flex flex-col gap-5 pt-3 pb-4 divider-y divider-border">
                                         <!-- Bloc Contexte -->
                                         <div class="px-5">
-                                            <div class="bg-light/50 p-4 rounded-lg border border-border">
-                                                <div class="text-sm font-semibold text-secondary-foreground mb-1">
-                                                    SPM-TRVX-1 > T-01 > Révisé 2
+                                            <div class="bg-light/50 p-4 rounded-lg border border-border relative">
+                                                <div class="text-sm font-semibold text-secondary-foreground mb-2" id="date_modal_context_path">
+                                                    SPM-TRVX-1 &gt; T-01 &gt; Révisé 2
                                                 </div>
-                                                <div class="text-xs text-muted-foreground">
-                                                    Date de soumission : 03 Juillet 2027
+                                                
+                                                <!-- Affichage de la date (Mode Vue) -->
+                                                <div class="flex items-center justify-between" id="date_modal_view_mode">
+                                                    <div class="text-sm text-gray-900 font-medium" id="date_modal_date_text">
+                                                        Date de soumission : 03 Juillet 2027
+                                                    </div>
+                                                    <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light text-muted-foreground hover:text-primary shrink-0" onclick="toggleDateEditMode()" title="Modifier la date" id="date_modal_edit_btn">
+                                                        <i class="ki-filled ki-pencil"></i>
+                                                    </button>
                                                 </div>
+
+                                                <!-- Champ de saisie de la date (Mode Edition/Ajout) -->
+                                                <div class="hidden flex-col gap-2" id="date_modal_edit_mode">
+                                                    <label class="text-xs text-muted-foreground" id="date_modal_input_label">Date de soumission :</label>
+                                                    <div class="flex items-center gap-2">
+                                                        <input type="date" class="kt-input form-control max-w-[200px]" id="date_modal_input" />
+                                                        <button class="kt-btn kt-btn-sm kt-btn-primary" onclick="saveModalDate()">Enregistrer</button>
+                                                        <button class="kt-btn kt-btn-sm kt-btn-light" onclick="cancelDateEditMode()" id="date_modal_cancel_btn">Annuler</button>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="border-b border-b-border"></div>
@@ -1628,7 +1646,7 @@
                                         <div class="px-5">
                                             <div class="text-sm font-semibold mb-3">Ajouter un commentaire</div>
                                             <div class="mb-3">
-                                                <textarea class="kt-input text-sm text-secondary-foreground font-normal w-full min-h-[80px]" placeholder="Écrivez votre commentaire..."
+                                                <textarea class="kt-input text-sm text-secondary-foreground font-normal w-full min-h-[80px] py-3 px-3" placeholder="Écrivez votre commentaire..."
                                                     rows="3"></textarea>
                                             </div>
                                             <div class="flex justify-end">

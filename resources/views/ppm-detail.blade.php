@@ -246,8 +246,8 @@
                                                             {{ $lot['contract_amount'] ? number_format($lot['contract_amount'], 0, ',', ' ') : '-' }}
                                                         </td>
                                                     @endif
-                                                    <td class="p-2">
-                                                        <div class="flex items-center justify-between gap-2">
+                                                    <td class="p-2 cell-hover-container relative group/cell">
+                                                        <div class="flex items-center justify-between gap-2 h-full min-h-[40px]">
                                                             @if(isset($lot['dates'][$milestone][$catKey]['date_value']))
                                                                 <div class="flex flex-col items-start gap-1">
                                                                     <span class="text-sm">
@@ -260,11 +260,28 @@
                                                                 <button
                                                                     class="kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost opacity-50 hover:opacity-100 shrink-0"
                                                                     title="Voir commentaires et fichiers"
-                                                                    data-kt-drawer-toggle="#date_details_drawer">
+                                                                    data-kt-drawer-toggle="#date_details_drawer"
+                                                                    onclick="openDateModal(this, 'view')"
+                                                                    data-spm="{{ $line['system_type'] }}"
+                                                                    data-lot="{{ $lot['name'] }}"
+                                                                    data-milestone="{{ $milestone }}"
+                                                                    data-category="{{ $catMeta['label'] }}"
+                                                                    data-date="{{ $lot['dates'][$milestone][$catKey]['date_value'] }}">
                                                                     <i class="ki-filled ki-eye text-xs"></i>
                                                                 </button>
                                                             @else
                                                                 <span class="text-sm text-muted-foreground">-</span>
+                                                                <button
+                                                                    class="edit-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 kt-btn kt-btn-xs kt-btn-icon kt-btn-primary rounded-full shadow-sm"
+                                                                    title="Ajouter une date"
+                                                                    data-kt-drawer-toggle="#date_details_drawer"
+                                                                    onclick="openDateModal(this, 'add')"
+                                                                    data-spm="{{ $line['system_type'] }}"
+                                                                    data-lot="{{ $lot['name'] }}"
+                                                                    data-milestone="{{ $milestone }}"
+                                                                    data-category="{{ $catMeta['label'] }}">
+                                                                    <i class="ki-filled ki-plus text-xs"></i>
+                                                                </button>
                                                             @endif
                                                         </div>
                                                     </td>
@@ -653,5 +670,110 @@
                         }
                     };
                 })();
+                </script>
+
+                <script>
+                // --- Gestion de la modale des dates ---
+                function openDateModal(button, mode) {
+                    const spm = button.getAttribute('data-spm') || '';
+                    const lot = button.getAttribute('data-lot') || '';
+                    const milestone = button.getAttribute('data-milestone') || '';
+                    const category = button.getAttribute('data-category') || '';
+                    const existingDate = button.getAttribute('data-date') || '';
+                    
+                    // Mettre à jour le fil d'ariane
+                    const contextPath = document.getElementById('date_modal_context_path');
+                    if (contextPath) {
+                        contextPath.innerHTML = `${spm} &gt; ${lot} &gt; ${category}`;
+                    }
+
+                    const viewMode = document.getElementById('date_modal_view_mode');
+                    const editMode = document.getElementById('date_modal_edit_mode');
+                    const dateText = document.getElementById('date_modal_date_text');
+                    const dateInput = document.getElementById('date_modal_input');
+                    const inputLabel = document.getElementById('date_modal_input_label');
+                    const cancelBtn = document.getElementById('date_modal_cancel_btn');
+
+                    if (mode === 'add') {
+                        // Mode Ajout: on affiche directement l'input, pas de mode vue
+                        viewMode.classList.add('hidden');
+                        editMode.classList.remove('hidden');
+                        editMode.classList.add('flex');
+                        dateInput.value = ''; // Champ vide
+                        cancelBtn.classList.add('hidden'); // Pas d'annulation si on vient d'ajouter (sauf si on ferme le drawer)
+                        
+                        // Optionnel: focus sur l'input après l'ouverture du drawer
+                        setTimeout(() => dateInput.focus(), 300);
+                    } else if (mode === 'view') {
+                        // Mode Vue: on affiche le texte par défaut
+                        viewMode.classList.remove('hidden');
+                        viewMode.classList.add('flex');
+                        editMode.classList.remove('flex');
+                        editMode.classList.add('hidden');
+                        cancelBtn.classList.remove('hidden'); // On peut annuler pour revenir au mode vue
+                        
+                        if (existingDate) {
+                            // Formater la date pour l'affichage (optionnel, fait côté serveur d'habitude, mais on le met tel quel ou on parse)
+                            const d = new Date(existingDate);
+                            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+                            dateText.innerHTML = `Date de ${category.toLowerCase()} : ${d.toLocaleDateString('fr-FR', options)}`;
+                            dateInput.value = existingDate.split('T')[0]; // Pré-remplir l'input pour édition future
+                        } else {
+                            dateText.innerHTML = `Date de ${category.toLowerCase()} : Non définie`;
+                        }
+                    }
+                }
+
+                function toggleDateEditMode() {
+                    document.getElementById('date_modal_view_mode').classList.add('hidden');
+                    document.getElementById('date_modal_view_mode').classList.remove('flex');
+                    
+                    document.getElementById('date_modal_edit_mode').classList.remove('hidden');
+                    document.getElementById('date_modal_edit_mode').classList.add('flex');
+                    document.getElementById('date_modal_input').focus();
+                }
+
+                function cancelDateEditMode() {
+                    document.getElementById('date_modal_edit_mode').classList.add('hidden');
+                    document.getElementById('date_modal_edit_mode').classList.remove('flex');
+                    
+                    document.getElementById('date_modal_view_mode').classList.remove('hidden');
+                    document.getElementById('date_modal_view_mode').classList.add('flex');
+                }
+
+                function saveModalDate() {
+                    const dateValue = document.getElementById('date_modal_input').value;
+                    if (!dateValue) {
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'warning',
+                            title: 'Veuillez sélectionner une date.',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        return;
+                    }
+                    
+                    // Ici on ferait la requête AJAX pour sauvegarder...
+                    // Pour le moment on simule le succès
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Date enregistrée avec succès.',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+
+                    // Optionnel : fermer le drawer ou revenir en mode vue
+                    // const drawerEl = document.getElementById('date_details_drawer');
+                    // const drawer = KTDrawer.getInstance(drawerEl);
+                    // if(drawer) drawer.hide();
+                    
+                    // Ou simplement revenir en mode vue avec la nouvelle date
+                    document.getElementById('date_modal_date_text').innerHTML = `Date enregistrée : ${dateValue}`;
+                    cancelDateEditMode();
+                }
                 </script>
 @endsection
