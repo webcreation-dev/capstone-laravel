@@ -84,7 +84,7 @@ License: https://keenthemes.com/metronic/tailwind/docs/getting-started/license
 </head>
 
 <body
-    class="antialiased flex h-full text-base text-foreground bg-background demo1 kt-sidebar-fixed kt-header-fixed overflow-x-hidden w-full max-w-[100vw]">
+    class="antialiased flex h-full text-base text-foreground bg-background demo1 kt-sidebar-fixed kt-header-fixed overflow-x-hidden w-full max-w-[100vw] @yield('body_class')">
     <!-- Theme Mode -->
     <script>
         const defaultThemeMode = 'light'; // light|dark|system

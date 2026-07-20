@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
+@section('body_class', 'kt-sidebar-collapse')
 @section('content')
     <!-- Content -->
     <main class="grow pt-5 min-w-0" id="content" role="content">
         <!-- Container -->
         <div class="kt-container-fluid">
-            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+            <div class="flex flex-wrap items-center justify-between gap-5 pb-7.5">
                 <div class="flex flex-col justify-center gap-2">
-                    <!-- <h1 class="text-xl font-medium leading-none text-mono">Détails du Dossier PPM</h1>
-                                <div class="flex items-center flex-wrap gap-1.5 font-medium">
-                                    <span class="text-base text-secondary-foreground">PROJET D'AMENAGEMENT DE LA ROUTE
-                                        DJOUGOU-PEHUNCO-KEROU-BANIKOARA</span>
-                                </div> -->
+                    <a href="/" class="kt-btn kt-btn-outline">
+                        <i class="ki-filled ki-arrow-left"></i> Retour à la liste
+                    </a>
                 </div>
                 <div class="flex items-center gap-2.5">
                     <button class="kt-btn kt-btn-outline" data-kt-drawer-toggle="#add_spm_drawer" onclick="openAddSpm()">
@@ -80,7 +79,7 @@
                                         class="sticky left-[250px] top-0 bg-gray-100 z-[32] w-[200px] min-w-[200px] max-w-[200px] whitespace-normal border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
                                         Description du Package</th>
                                     <th style="left: 450px;"
-                                        class="sticky top-0 bg-gray-100 z-[31] w-[80px] min-w-[80px] max-w-[80px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
+                                        class="sticky top-0 bg-gray-100 z-[31] w-[130px] min-w-[130px] max-w-[130px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
                                         Lot</th>
                                     <th
                                         class="bg-gray-100 min-w-[200px] whitespace-normal border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
@@ -203,9 +202,22 @@
 
                                                 @if($loop->first)
                                                     <!-- Début Lot -->
-                                                    <td style="left: 450px;" class="sticky bg-white group-hover:bg-gray-50 z-[11] font-bold border-r-2 border-gray-400 w-[80px] min-w-[80px] max-w-[80px] col-separator"
+                                                    <td style="left: 450px;" class="cell-hover-container relative sticky bg-white z-[11] font-bold border-r-2 border-gray-400 w-[130px] min-w-[130px] max-w-[130px] col-separator group-hover:bg-gray-50"
                                                         rowspan="3">
                                                         {{ $lot['name'] }}
+                                                        <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
+                                                                onclick="openEditLot(this)"
+                                                                data-lot-id="{{ $lot['id'] }}"
+                                                                data-lot-name="{{ $lot['name'] }}"
+                                                                data-lot-tender="{{ $lot['tender_number'] }}"
+                                                                data-lot-amount-type="{{ $lot['amount_type'] }}"
+                                                                data-lot-estimated="{{ $lot['estimated_cost'] }}"
+                                                                data-lot-procurement="{{ $lot['procurement_method'] }}"
+                                                                data-lot-qualification="{{ $lot['qualification_type'] }}"
+                                                                data-lot-audit="{{ $lot['control_audit'] }}"
+                                                                title="Modifier les caractéristiques du Lot">
+                                                            <i class="ki-filled ki-pencil text-lg"></i>
+                                                        </button>
                                                     </td>
                                                     <td class="bg-white group-hover:bg-gray-50 border-r border-gray-300 min-w-[200px] whitespace-normal break-words"
                                                         rowspan="3">
@@ -467,6 +479,110 @@
                         addLot(); // Un lot vide par défaut
                     };
 
+                    // --- Gestion du Drawer d'Édition de Lot ---
+                    window.openEditLot = function(btn) {
+                        const drawer = KTDrawer.getInstance(document.getElementById('edit_lot_drawer'));
+                        if (!drawer) {
+                           // Initialiser si nécessaire
+                           new KTDrawer(document.getElementById('edit_lot_drawer'));
+                        }
+                        
+                        document.getElementById('lot_form').reset();
+                        document.getElementById('lot_form_id').value = btn.dataset.lotId || '';
+                        
+                        // Mettre à jour le titre
+                        const lotName = btn.dataset.lotName || 'le Lot';
+                        document.getElementById('lot_drawer_title').textContent = 'Caractéristiques de ' + lotName;
+                        
+                        // Select2 peut nécessiter un trigger('change') si on utilise jquery
+                        function setSelectVal(id, val) {
+                            const el = document.getElementById(id);
+                            if (el) {
+                                el.value = val;
+                                if (window.jQuery) {
+                                    window.jQuery(el).trigger('change');
+                                }
+                            }
+                        }
+                        
+                        document.getElementById('lot_tender_number').value = btn.dataset.lotTender || '';
+                        setSelectVal('lot_amount_type', btn.dataset.lotAmountType || '');
+                        document.getElementById('lot_estimated_cost').value = btn.dataset.lotEstimated || '';
+                        setSelectVal('lot_procurement_method', btn.dataset.lotProcurement || '');
+                        setSelectVal('lot_qualification_type', btn.dataset.lotQualification || '');
+                        setSelectVal('lot_control_audit', btn.dataset.lotAudit || '');
+                        
+                        // Le drawer s'ouvre soit manuellement soit parce que data-kt-drawer-toggle est utilisé.
+                        // Puisqu'on ne l'a pas mis sur le bouton pour éviter les conflits, on l'ouvre manuellement :
+                        const drawerInstance = KTDrawer.getInstance(document.getElementById('edit_lot_drawer'));
+                        if (drawerInstance) {
+                            drawerInstance.show();
+                        }
+                    };
+
+                    window.saveLotData = async function() {
+                        const form = document.getElementById('lot_form');
+                        const formData = new FormData(form);
+                        
+                        const btn = document.getElementById('btn_save_lot');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="ki-filled ki-loading"></i> Enregistrement...';
+                        btn.disabled = true;
+
+                        try {
+                            const response = await fetch('/ppm-lots/save', {
+                                method: 'POST',
+                                headers: {
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                    'Accept': 'application/json'
+                                },
+                                body: formData
+                            });
+                            
+                            const data = await response.json();
+                            
+                            if (response.ok && data.success) {
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: "Caractéristiques du lot enregistrées !",
+                                    showConfirmButton: false,
+                                    timer: 1500,
+                                    timerProgressBar: true
+                                });
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message || "Erreur lors de l'enregistrement",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true
+                                });
+                                btn.innerHTML = originalText;
+                                btn.disabled = false;
+                            }
+                        } catch (error) {
+                            console.error("Erreur serveur:", error);
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                icon: 'error',
+                                title: "Une erreur inattendue s'est produite.",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true
+                            });
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                        }
+                    };
+
                     // --- Envoi du formulaire (AJAX) ---
                     window.saveSpm = async function() {
                         const form = document.getElementById('spm_form');
@@ -495,16 +611,43 @@
                             const data = await response.json();
                             
                             if (response.ok && data.success) {
-                                // Succès -> recharger la page
-                                window.location.reload();
+                                // Succès -> afficher toast et recharger la page
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: "Ligne PPM enregistrée avec succès !",
+                                    showConfirmButton: false,
+                                    timer: 1500,
+                                    timerProgressBar: true
+                                });
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 1500);
                             } else {
-                                alert(data.message || "Erreur lors de l'enregistrement");
+                                Swal.fire({
+                                    toast: true,
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message || "Erreur lors de l'enregistrement",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true
+                                });
                                 btn.innerHTML = originalText;
                                 btn.disabled = false;
                             }
                         } catch (error) {
                             console.error("Erreur serveur:", error);
-                            alert("Une erreur inattendue s'est produite.");
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                icon: 'error',
+                                title: "Une erreur inattendue s'est produite.",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true
+                            });
                             btn.innerHTML = originalText;
                             btn.disabled = false;
                         }

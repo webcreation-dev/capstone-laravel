@@ -1681,8 +1681,8 @@
 
 <!-- Add SPM Drawer -->
 <div class="hidden kt-drawer kt-drawer-end flex-col top-0 bottom-0 end-0 bg-background border-l border-border"
-    style="width: 65%; max-width: 95%;"
-    data-kt-drawer="true" data-kt-drawer-container="body" id="add_spm_drawer">
+    style="width: 65%; max-width: 95%; z-index: 100000 !important;"
+    data-kt-drawer="true" data-kt-drawer-container="#ppm-table-card" id="add_spm_drawer">
     
     <form id="spm_form" class="flex flex-col h-full w-full" onsubmit="event.preventDefault(); saveSpm();">
         <input type="hidden" name="line_id" id="spm_line_id">
@@ -1776,6 +1776,121 @@
     </form>
 </div>
 <!-- End of Add SPM Drawer -->
+
+<!-- Drawer d'édition d'un Lot -->
+<div class="hidden kt-drawer kt-drawer-end flex-col top-0 bottom-0 end-0 bg-background border-l border-border"
+    style="width: 65%; max-width: 95%; z-index: 100000 !important;"
+    data-kt-drawer="true" data-kt-drawer-container="#ppm-table-card" id="edit_lot_drawer">
+    <form id="lot_form" class="flex flex-col h-full w-full" onsubmit="event.preventDefault(); saveLotData();">
+        <input type="hidden" name="lot_id" id="lot_form_id">
+        <div class="flex items-center justify-between gap-2.5 text-xl font-medium leading-none text-mono px-5 py-5 border-b border-b-border" id="edit_lot_header">
+            <span id="lot_drawer_title">Caractéristiques du Lot</span>
+            <button type="button" class="kt-btn kt-btn-sm kt-btn-icon kt-btn-dim shrink-0" data-kt-drawer-dismiss="true" id="edit_lot_close">
+                <i class="ki-filled ki-cross"></i>
+            </button>
+        </div>
+        
+        <div class="kt-scrollable grow kt-scrollable-y p-5 lg:p-7.5 bg-secondary/30" id="lot_scrollable_container" data-kt-scrollable="true" data-kt-scrollable-dependencies="#edit_lot_header, #edit_lot_footer" data-kt-scrollable-offset="0px">
+           <div class="flex grow gap-5 lg:gap-7.5">
+           
+           <!-- Sidebar -->
+           <div class="hidden lg:block w-[230px] shrink-0 sticky top-0 self-start pt-2">
+            <div class="w-[230px]">
+             <div class="flex flex-col grow relative before:absolute before:left-[11px] before:top-0 before:bottom-0 before:border-l before:border-border" data-kt-scrollspy="true" data-kt-scrollspy-offset="20px" data-kt-scrollspy-target="#lot_scrollable_container">
+              <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 active border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#section_appel_offre">
+               <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary"></span>Appel d'Offres
+              </a>
+              <a class="flex items-center rounded-lg pl-2.5 pr-2.5 py-2.5 gap-1.5 border border-transparent text-sm text-foreground hover:text-primary hover:font-medium kt-scrollspy-active:bg-secondary-active kt-scrollspy-active:text-primary kt-scrollspy-active:font-medium hover:rounded-lg" data-kt-scrollspy-anchor="true" href="#section_qualification">
+               <span class="flex w-1.5 relative before:absolute before:top-0 before:size-1.5 before:rounded-full before:-translate-x-2/4 before:-translate-y-2/4 kt-scrollspy-active:before:bg-primary"></span>Qualification
+              </a>
+             </div>
+            </div>
+           </div>
+
+           <!-- Contenu principal -->
+           <div class="flex flex-col items-stretch grow gap-5 lg:gap-7.5">
+             
+             <!-- Card 1: Appel d'Offres -->
+             <div class="kt-card pb-2.5">
+              <div class="kt-card-header" id="section_appel_offre">
+               <h3 class="kt-card-title">Appel d'Offres</h3>
+              </div>
+              <div class="kt-card-content p-5 lg:p-7.5 grid gap-5">
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">N° Appel d'Offres émis</label>
+                 <input class="kt-input" name="tender_number" id="lot_tender_number" type="text" placeholder="Ex: AO-2026-001..." />
+                </div>
+               </div>
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">MF ou DQE</label>
+                 <select class="kt-select" name="amount_type" id="lot_amount_type" data-control="select2" data-hide-search="true">
+                  <option value="">Sélectionner</option>
+                  <option value="MF">Montant Forfaitaire (MF)</option>
+                  <option value="DQE">Devis Quantitatif Estimatif (DQE)</option>
+                 </select>
+                </div>
+               </div>
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">Coût Estimatif</label>
+                 <input class="kt-input" name="estimated_cost" id="lot_estimated_cost" type="number" step="0.01" placeholder="Ex: 150000.00" />
+                </div>
+               </div>
+              </div>
+             </div>
+
+             <!-- Card 2: Qualification -->
+             <div class="kt-card pb-2.5">
+              <div class="kt-card-header" id="section_qualification">
+               <h3 class="kt-card-title">Qualification & Audit</h3>
+              </div>
+              <div class="kt-card-content p-5 lg:p-7.5 grid gap-5">
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">Mode de passation</label>
+                 <select class="kt-select" name="procurement_method" id="lot_procurement_method" data-control="select2" data-hide-search="true">
+                  <option value="">Sélectionner</option>
+                  <option value="AOO">AOO</option>
+                  <option value="DRP">DRP</option>
+                  <option value="DC">DC</option>
+                  <option value="ED">ED</option>
+                 </select>
+                </div>
+               </div>
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">Type de Qualification</label>
+                 <select class="kt-select" name="qualification_type" id="lot_qualification_type" data-control="select2" data-hide-search="true">
+                  <option value="">Sélectionner</option>
+                  <option value="Pré-Qualification">Pré-Qualification</option>
+                  <option value="Post-Qualification">Post-Qualification</option>
+                 </select>
+                </div>
+               </div>
+               <div class="w-full">
+                <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                 <label class="kt-form-label flex items-center gap-1 max-w-56">Contrôle et Audit</label>
+                 <select class="kt-select" name="control_audit" id="lot_control_audit" data-control="select2" data-hide-search="true">
+                  <option value="">Sélectionner</option>
+                  <option value="Préalable">Préalable</option>
+                  <option value="à Postériori">à Postériori</option>
+                 </select>
+                </div>
+               </div>
+              </div>
+             </div>
+             
+           </div>
+           </div>
+        </div>
+
+        <div class="flex justify-end p-5 border-t border-t-border" id="edit_lot_footer">
+            <button type="submit" class="kt-btn kt-btn-primary" id="btn_save_lot">Enregistrer le Lot</button>
+        </div>
+    </form>
+</div>
 
 <!-- Template JS pour un Lot -->
 <template id="lot_template">

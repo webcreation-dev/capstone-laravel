@@ -118,6 +118,31 @@ class PpmController extends Controller
         return response()->json(['success' => true, 'message' => 'Ligne et lots enregistrés avec succès.']);
     }
 
+    public function saveLot(Request $request)
+    {
+        $validated = $request->validate([
+            'lot_id' => 'required|exists:ppm_lots,id',
+            'tender_number' => 'nullable|string',
+            'amount_type' => 'nullable|in:MF,DQE',
+            'estimated_cost' => 'nullable|numeric',
+            'procurement_method' => 'nullable|in:AOO,DRP,DC,ED',
+            'qualification_type' => 'nullable|in:Pré-Qualification,Post-Qualification',
+            'control_audit' => 'nullable|in:Préalable,à Postériori',
+        ]);
+
+        $lot = \App\Models\PpmLot::findOrFail($validated['lot_id']);
+        $lot->update([
+            'tender_number' => $validated['tender_number'],
+            'amount_type' => $validated['amount_type'],
+            'estimated_cost' => $validated['estimated_cost'],
+            'procurement_method' => $validated['procurement_method'],
+            'qualification_type' => $validated['qualification_type'],
+            'control_audit' => $validated['control_audit'],
+        ]);
+
+        return response()->json(['success' => true, 'message' => 'Caractéristiques du lot enregistrées avec succès.']);
+    }
+
     public function show($id)
     {
         $ppm = \App\Models\Ppm::with(['lines.lots.dates'])->findOrFail($id);
