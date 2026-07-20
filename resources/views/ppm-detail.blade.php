@@ -684,11 +684,18 @@
                     const category = button.getAttribute('data-category') || '';
                     const existingDate = button.getAttribute('data-date') || '';
                     const dateId = button.getAttribute('data-id') || '';
+                    window.currentDateId = dateId;
                     
                     // Mettre à jour le fil d'ariane
                     const contextPath = document.getElementById('date_modal_context_path');
                     if (contextPath) {
                         contextPath.innerHTML = `${spm} &gt; ${lot} &gt; ${category}`;
+                    }
+
+                    // Mettre à jour le titre du modal
+                    const drawerTitle = document.getElementById('date_details_drawer_title');
+                    if (drawerTitle) {
+                        drawerTitle.innerHTML = `${category} - ${lot}`;
                     }
 
                     const viewMode = document.getElementById('date_modal_view_mode');
@@ -717,7 +724,7 @@
                             const d = new Date(existingDate);
                             const options = { day: '2-digit', month: 'long', year: 'numeric' };
                             dateText.innerHTML = `Date de ${category.toLowerCase()} : ${d.toLocaleDateString('fr-FR', options)}`;
-                            dateInput.value = existingDate.split('T')[0];
+                            dateInput.value = existingDate.substring(0, 10);
                         } else {
                             dateText.innerHTML = `Date de ${category.toLowerCase()} : Non définie`;
                         }
@@ -758,20 +765,47 @@
                         container.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun commentaire.</div>';
                         return;
                     }
+
+                    const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
                     
                     container.innerHTML = comments.map(comment => `
-                        <div class="flex flex-col gap-1 mb-4">
-                            <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <span class="text-xs font-semibold text-primary">U</span>
-                                </div>
-                                <span class="text-sm font-semibold text-gray-900">Utilisateur</span>
-                                <span class="text-xs text-muted-foreground">${new Date(comment.created_at).toLocaleDateString('fr-FR')}</span>
+                        <div class="flex grow gap-2.5">
+                            <div class="kt-avatar size-8 rounded-full flex items-center justify-center shrink-0" style="background-color: #e2e8f0;">
+                                <span class="text-sm font-semibold" style="color: #475569;">U</span>
                             </div>
-                            <div class="text-sm text-gray-700 bg-light p-3 rounded-lg rounded-tl-none border border-border">
-                                ${comment.content}
+                            <div class="flex flex-col gap-2 grow">
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-sm font-medium">
+                                        <a class="hover:text-primary text-mono font-semibold" href="#">Utilisateur</a>
+                                        <span class="text-secondary-foreground"> a ajouté un commentaire</span>
+                                    </div>
+                                    <span class="flex items-center text-xs font-medium text-muted-foreground">
+                                        ${new Date(comment.created_at).toLocaleDateString('fr-FR', dateOptions)}
+                                    </span>
+                                </div>
+                                <div class="text-sm text-secondary-foreground" id="comment_text_${comment.id}">
+                                    ${comment.content}
+                                </div>
+                                <div class="hidden flex-col gap-2" id="comment_edit_${comment.id}">
+                                    <textarea id="comment_input_${comment.id}" class="kt-input text-sm text-secondary-foreground font-normal w-full min-h-[80px] py-3 px-3" rows="3">${comment.content}</textarea>
+                                    <div class="flex items-center gap-2">
+                                        <button class="kt-btn kt-btn-sm kt-btn-primary" onclick="saveComment(${comment.id})">Enregistrer</button>
+                                        <button class="kt-btn kt-btn-sm kt-btn-light" onclick="cancelEditComment(${comment.id})">Annuler</button>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2" id="comment_actions_${comment.id}">
+                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs" onclick="toggleEditComment(${comment.id})">
+                                        <i class="ki-filled ki-pencil text-xs"></i>
+                                        Modifier
+                                    </button>
+                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs text-danger" onclick="deleteComment(${comment.id})">
+                                        <i class="ki-filled ki-trash text-xs"></i>
+                                        Supprimer
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        <div class="border-b border-b-border my-2 last:hidden"></div>
                     `).join('');
                 }
                 
@@ -828,7 +862,7 @@
 
                 function saveModalDate() {
                     const dateValue = document.getElementById('date_modal_input').value;
-                    if (!dateValue) {
+                    if (!dateValue || !window.currentDateId) {
                         Swal.fire({
                             toast: true,
                             position: 'top-end',
@@ -840,25 +874,120 @@
                         return;
                     }
                     
-                    // Ici on ferait la requête AJAX pour sauvegarder...
-                    // Pour le moment on simule le succès
-                    Swal.fire({
-                        toast: true,
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Date enregistrée avec succès.',
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    fetch('/ppm-lot-dates/save', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            id: window.currentDateId,
+                            date_value: dateValue
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                icon: 'success',
+                                title: data.message,
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        }
+                    })
+                    .catch(error => console.error('Erreur:', error));
+                }
 
-                    // Optionnel : fermer le drawer ou revenir en mode vue
-                    // const drawerEl = document.getElementById('date_details_drawer');
-                    // const drawer = KTDrawer.getInstance(drawerEl);
-                    // if(drawer) drawer.hide();
+                function publishComment() {
+                    const content = document.getElementById('new_comment_input').value;
+                    if (!content.trim() || !window.currentDateId) return;
+
+                    fetch(`/ppm-lot-dates/${window.currentDateId}/comments`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({ content: content })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('new_comment_input').value = '';
+                            fetchDateDetails(window.currentDateId); // recharger les commentaires
+                        }
+                    });
+                }
+
+                function toggleEditComment(id) {
+                    document.getElementById(`comment_text_${id}`).classList.add('hidden');
+                    document.getElementById(`comment_actions_${id}`).classList.add('hidden');
                     
-                    // Ou simplement revenir en mode vue avec la nouvelle date
-                    document.getElementById('date_modal_date_text').innerHTML = `Date enregistrée : ${dateValue}`;
-                    cancelDateEditMode();
+                    const editContainer = document.getElementById(`comment_edit_${id}`);
+                    editContainer.classList.remove('hidden');
+                    editContainer.classList.add('flex');
+                    document.getElementById(`comment_input_${id}`).focus();
+                }
+
+                function cancelEditComment(id) {
+                    const editContainer = document.getElementById(`comment_edit_${id}`);
+                    editContainer.classList.add('hidden');
+                    editContainer.classList.remove('flex');
+                    
+                    document.getElementById(`comment_text_${id}`).classList.remove('hidden');
+                    document.getElementById(`comment_actions_${id}`).classList.remove('hidden');
+                }
+
+                function saveComment(id) {
+                    const content = document.getElementById(`comment_input_${id}`).value;
+                    if (!content.trim()) return;
+
+                    fetch(`/ppm-lot-date-comments/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({ content: content })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) fetchDateDetails(window.currentDateId);
+                    });
+                }
+
+                function deleteComment(id) {
+                    Swal.fire({
+                        title: 'Êtes-vous sûr ?',
+                        text: "Vous ne pourrez pas annuler cette action !",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Oui, supprimer !',
+                        cancelButtonText: 'Annuler'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            fetch(`/ppm-lot-date-comments/${id}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) fetchDateDetails(window.currentDateId);
+                            });
+                        }
+                    });
                 }
                 </script>
 @endsection

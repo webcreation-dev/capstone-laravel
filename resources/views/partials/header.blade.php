@@ -1459,7 +1459,7 @@
                             data-kt-drawer="true" data-kt-drawer-container="body" id="date_details_drawer">
                             <div class="flex items-center justify-between gap-2.5 text-sm text-mono font-semibold px-5 py-2.5 border-b border-b-border"
                                 id="date_details_header">
-                                Détails de la Date
+                                <span id="date_details_drawer_title">Détails de la Date</span>
                                 <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-dim shrink-0"
                                     data-kt-drawer-dismiss="true">
                                     <i class="ki-filled ki-cross">
@@ -1543,7 +1543,7 @@
                                                     <div class="text-sm text-gray-900 font-medium" id="date_modal_date_text">
                                                         Date de soumission : 03 Juillet 2027
                                                     </div>
-                                                    <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light text-muted-foreground hover:text-primary shrink-0" onclick="toggleDateEditMode()" title="Modifier la date" id="date_modal_edit_btn">
+                                                    <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost text-muted-foreground hover:text-primary shrink-0" onclick="toggleDateEditMode()" title="Modifier la date" id="date_modal_edit_btn">
                                                         <i class="ki-filled ki-pencil"></i>
                                                     </button>
                                                 </div>
@@ -1572,11 +1572,11 @@
                                         <div class="px-5">
                                             <div class="text-sm font-semibold mb-3">Ajouter un commentaire</div>
                                             <div class="mb-3">
-                                                <textarea class="kt-input text-sm text-secondary-foreground font-normal w-full min-h-[80px] py-3 px-3" placeholder="Écrivez votre commentaire..."
+                                                <textarea id="new_comment_input" class="kt-input text-sm text-secondary-foreground font-normal w-full min-h-[80px] py-3 px-3" placeholder="Écrivez votre commentaire..."
                                                     rows="3"></textarea>
                                             </div>
                                             <div class="flex justify-end">
-                                                <button class="kt-btn kt-btn-primary kt-btn-sm">
+                                                <button class="kt-btn kt-btn-primary kt-btn-sm" onclick="publishComment()">
                                                     <i class="ki-filled ki-check"></i>
                                                     Publier
                                                 </button>

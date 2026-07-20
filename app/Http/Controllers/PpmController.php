@@ -154,11 +154,78 @@ class PpmController extends Controller
 
     public function getDateDetails($dateId)
     {
-        $date = \App\Models\PpmLotDate::with(['comments', 'documents'])->findOrFail($dateId);
+        $date = \App\Models\PpmLotDate::with(['comments' => function($q) {
+            $q->orderBy('created_at', 'desc');
+        }, 'documents'])->findOrFail($dateId);
+        
         return response()->json([
             'success' => true,
             'comments' => $date->comments,
             'documents' => $date->documents,
+        ]);
+    }
+
+    public function saveDate(Request $request)
+    {
+        $validated = $request->validate([
+            'id' => 'required|exists:ppm_lot_dates,id',
+            'date_value' => 'required|date',
+        ]);
+
+        $date = \App\Models\PpmLotDate::findOrFail($validated['id']);
+        $date->update(['date_value' => $validated['date_value']]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Date mise à jour avec succès.',
+            'date_value' => $date->date_value
+        ]);
+    }
+
+    public function addComment(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'content' => 'required|string',
+        ]);
+
+        $date = \App\Models\PpmLotDate::findOrFail($id);
+        $comment = $date->comments()->create([
+            'content' => $validated['content'],
+            // On associe un user_id si on a l'auth, pour le moment on peut le laisser null si la db le permet
+            // 'user_id' => auth()->id() ?? null,
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Commentaire ajouté avec succès.',
+            'comment' => $comment
+        ]);
+    }
+
+    public function updateComment(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'content' => 'required|string',
+        ]);
+
+        $comment = \App\Models\PpmLotDateComment::findOrFail($id);
+        $comment->update(['content' => $validated['content']]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Commentaire modifié avec succès.',
+            'comment' => $comment
+        ]);
+    }
+
+    public function deleteComment($id)
+    {
+        $comment = \App\Models\PpmLotDateComment::findOrFail($id);
+        $comment->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Commentaire supprimé avec succès.'
         ]);
     }
 }
