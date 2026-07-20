@@ -35,8 +35,7 @@
             <div class="kt-card grow min-w-0 overflow-hidden rounded-none bg-white" style="border-radius: 0 !important;"
                 id="ppm-table-card">
                 <div class="kt-card-header justify-center relative">
-                    <h3 class="kt-card-title text-center uppercase px-10">{{ $ppm['dossier_name'] }}
-                        <span class="text-sm text-muted-foreground ml-2">({{ $ppm['reference'] }})</span>
+                    <h3 class="kt-card-title text-center uppercase px-10">PLAN DE PASSATION DE MARCHÉS - VERSION DÉTAILLÉE POUR L'ACQUISITION DES SERVICES
                     </h3>
                     <button id="btn-fullscreen"
                         class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light absolute right-4 top-1/2 -translate-y-1/2"
