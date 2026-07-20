@@ -147,14 +147,14 @@
                                             // Colonnes des dates définies par les enums
                                             $milestoneTypes = [
                                                 'submission',
-                                                'no_avis',
-                                                'ias_date',
-                                                'submission_deadline',
+                                                'notice_no',
+                                                'ias',
+                                                'deposit_opening',
                                                 'report_submission',
-                                                'no_report_avis',
-                                                'contract_award',
-                                                'contract_signature',
-                                                'contract_completion'
+                                                'no_objection',
+                                                'attribution',
+                                                'signature',
+                                                'completion'
                                             ];
                                         @endphp
                                         
@@ -210,7 +210,7 @@
                                                         
                                                         <!-- Dates (9 colonnes) -->
                                                         @foreach($milestoneTypes as $milestone)
-                                                            @if($milestone === 'contract_signature' && $loop->parent->first)
+                                                            @if($milestone === 'signature' && $loop->parent->first)
                                                                 <!-- Montant du contrat -->
                                                                 <td class="border-r font-medium text-center" rowspan="3">
                                                                     {{ $lot['contract_amount'] ? number_format($lot['contract_amount'], 0, ',', ' ') : '-' }}

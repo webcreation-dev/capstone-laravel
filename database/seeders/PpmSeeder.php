@@ -51,12 +51,37 @@ class PpmSeeder extends Seeder
                     'contract_amount' => rand(10000000, 50000000),
                 ]);
 
-                // Optionnel : Ajouter quelques dates d'historique pour simuler la vraie vie
-                $lot->dates()->create([
-                    'milestone_type' => 'submission',
-                    'date_category' => 'plan',
-                    'date_value' => now()->addDays(rand(10, 30)),
-                ]);
+                // Milestones de test
+                $testMilestones = ['submission', 'notice_no', 'ias', 'signature'];
+                
+                foreach ($testMilestones as $milestone) {
+                    $baseDate = now()->addDays(rand(10, 60));
+                    
+                    // Toujours un 'plan'
+                    $lot->dates()->create([
+                        'milestone_type' => $milestone,
+                        'date_category' => 'plan',
+                        'date_value' => $baseDate,
+                    ]);
+
+                    // Parfois un 'revised'
+                    if (rand(1, 100) > 50) {
+                        $lot->dates()->create([
+                            'milestone_type' => $milestone,
+                            'date_category' => 'revised',
+                            'date_value' => $baseDate->copy()->addDays(rand(5, 15)),
+                        ]);
+                    }
+
+                    // Parfois un 'real'
+                    if (rand(1, 100) > 70) {
+                        $lot->dates()->create([
+                            'milestone_type' => $milestone,
+                            'date_category' => 'real',
+                            'date_value' => $baseDate->copy()->addDays(rand(0, 20)),
+                        ]);
+                    }
+                }
             }
         }
     }
