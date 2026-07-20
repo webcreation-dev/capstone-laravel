@@ -218,19 +218,23 @@
                                                             @endif
                                                             <td class="p-2">
                                                                 <div class="flex items-center justify-between gap-2">
-                                                                    <span class="text-sm">
-                                                                        @if(isset($lot['dates'][$milestone][$catKey]['date_value']))
-                                                                            {{ \Carbon\Carbon::parse($lot['dates'][$milestone][$catKey]['date_value'])->format('d M Y') }}
-                                                                    </span>
-                                                                            <button class="kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost opacity-50 hover:opacity-100"
-                                                                                title="Voir commentaires et fichiers"
-                                                                                data-kt-drawer-toggle="#date_details_drawer">
-                                                                                <i class="ki-filled ki-eye text-xs"></i>
-                                                                            </button>
-                                                                        @else
-                                                                            -
-                                                                    </span>
-                                                                        @endif
+                                                                    @if(isset($lot['dates'][$milestone][$catKey]['date_value']))
+                                                                        <div class="flex flex-col items-start gap-1">
+                                                                            <span class="text-sm">
+                                                                                {{ \Carbon\Carbon::parse($lot['dates'][$milestone][$catKey]['date_value'])->format('d M Y') }}
+                                                                            </span>
+                                                                            <span class="kt-badge kt-badge-sm {{ $catMeta['color'] }}">
+                                                                                {{ $catMeta['label'] }}
+                                                                            </span>
+                                                                        </div>
+                                                                        <button class="kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost opacity-50 hover:opacity-100 shrink-0"
+                                                                            title="Voir commentaires et fichiers"
+                                                                            data-kt-drawer-toggle="#date_details_drawer">
+                                                                            <i class="ki-filled ki-eye text-xs"></i>
+                                                                        </button>
+                                                                    @else
+                                                                        <span class="text-sm text-muted-foreground">-</span>
+                                                                    @endif
                                                                 </div>
                                                             </td>
                                                         @endforeach
