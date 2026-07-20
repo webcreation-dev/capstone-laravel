@@ -162,6 +162,18 @@
                                         'signature',
                                         'completion'
                                     ];
+
+                                    $milestoneLabels = [
+                                        'submission' => 'Date de soumission',
+                                        'notice_no' => 'Date d\'Avis (NO)',
+                                        'ias' => 'Date de l\'Invitation à Soumissionner (IaS)',
+                                        'deposit_opening' => 'Date de limite de dépôt / ouverture des Propositions',
+                                        'report_submission' => 'Date de soumission du Rapport technique',
+                                        'no_objection' => 'Date de l\'Avis de Non-Objection',
+                                        'attribution' => 'Date d\'Attribution du Contrat',
+                                        'signature' => 'Date de Signature du Contrat',
+                                        'completion' => 'Date d\'Achèvement du Contrat'
+                                    ];
                                 @endphp
 
                                 @forelse($ppm['lines'] as $lineIdx => $line)
@@ -269,6 +281,7 @@
                                                                     data-spm="{{ $line['system_type'] }}"
                                                                     data-lot="{{ $lot['name'] }}"
                                                                     data-milestone="{{ $milestone }}"
+                                                                    data-milestone-label="{{ $milestoneLabels[$milestone] ?? $milestone }}"
                                                                     data-category="{{ $catMeta['label'] }}"
                                                                     data-date="{{ $lot['dates'][$milestone][$catKey]['date_value'] }}">
                                                                     <i class="ki-filled ki-eye text-xs"></i>
@@ -283,6 +296,7 @@
                                                                     data-spm="{{ $line['system_type'] }}"
                                                                     data-lot="{{ $lot['name'] }}"
                                                                     data-milestone="{{ $milestone }}"
+                                                                    data-milestone-label="{{ $milestoneLabels[$milestone] ?? $milestone }}"
                                                                     data-category="{{ $catMeta['label'] }}">
                                                                     <i class="ki-filled ki-pencil text-xs"></i>
                                                                 </button>
@@ -468,8 +482,17 @@
                         // C'est une modification
                         document.getElementById('spm_drawer_title').textContent = 'Modifier Ligne PPM';
                         document.getElementById('spm_line_id').value = btn.dataset.spmId || '';
-                        document.getElementById('spm_system_type').value = btn.dataset.spmSystemType || '';
-                        document.getElementById('spm_package_type').value = btn.dataset.spmPackageType || '';
+                        
+                        const sysSelect = document.getElementById('spm_system_type');
+                        sysSelect.value = btn.dataset.spmSystemType || '';
+                        sysSelect.dispatchEvent(new Event('change'));
+                        if (typeof $ !== 'undefined') $(sysSelect).trigger('change');
+                        
+                        const pkgSelect = document.getElementById('spm_package_type');
+                        pkgSelect.value = btn.dataset.spmPackageType || '';
+                        pkgSelect.dispatchEvent(new Event('change'));
+                        if (typeof $ !== 'undefined') $(pkgSelect).trigger('change');
+
                         document.getElementById('spm_package_description').value = btn.dataset.spmDescription || '';
                         
                         // Vider les lots existants dans le conteneur
@@ -681,21 +704,27 @@
                     const spm = button.getAttribute('data-spm') || '';
                     const lot = button.getAttribute('data-lot') || '';
                     const milestone = button.getAttribute('data-milestone') || '';
+                    const milestoneLabel = button.getAttribute('data-milestone-label') || milestone;
                     const category = button.getAttribute('data-category') || '';
                     const existingDate = button.getAttribute('data-date') || '';
                     const dateId = button.getAttribute('data-id') || '';
                     window.currentDateId = dateId;
+                    window.currentLotId = button.getAttribute('data-lot-id') || '';
+                    window.currentCatKey = button.getAttribute('data-cat-key') || '';
+                    window.currentMilestone = milestone;
+                    window.currentDateButton = button;
                     
                     // Mettre à jour le fil d'ariane
                     const contextPath = document.getElementById('date_modal_context_path');
                     if (contextPath) {
-                        contextPath.innerHTML = `${spm} &gt; ${lot} &gt; ${category}`;
+                        const catColor = window.currentCatKey === 'plan' ? 'kt-badge-light' : (window.currentCatKey === 'revised' ? 'kt-badge-warning' : 'kt-badge-success');
+                        contextPath.innerHTML = `${spm} &gt; ${lot} &gt; <span class="kt-badge kt-badge-sm ${catColor} ml-1">${category}</span>`;
                     }
 
                     // Mettre à jour le titre du modal
                     const drawerTitle = document.getElementById('date_details_drawer_title');
                     if (drawerTitle) {
-                        drawerTitle.innerHTML = `${category} - ${lot}`;
+                        drawerTitle.innerHTML = `${milestoneLabel} - ${lot}`;
                     }
 
                     const viewMode = document.getElementById('date_modal_view_mode');
@@ -723,7 +752,7 @@
                         if (existingDate) {
                             const d = new Date(existingDate);
                             const options = { day: '2-digit', month: 'long', year: 'numeric' };
-                            dateText.innerHTML = `Date de ${category.toLowerCase()} : ${d.toLocaleDateString('fr-FR', options)}`;
+                            dateText.innerHTML = `Date enregistrée : ${d.toLocaleDateString('fr-FR', options)}`;
                             dateInput.value = existingDate.substring(0, 10);
                         } else {
                             dateText.innerHTML = `Date de ${category.toLowerCase()} : Non définie`;

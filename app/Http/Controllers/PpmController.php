@@ -168,17 +168,30 @@ class PpmController extends Controller
     public function saveDate(Request $request)
     {
         $validated = $request->validate([
-            'id' => 'required|exists:ppm_lot_dates,id',
+            'id' => 'nullable|exists:ppm_lot_dates,id',
+            'ppm_lot_id' => 'required_without:id|exists:ppm_lots,id',
+            'milestone_type' => 'required_without:id|string',
+            'date_category' => 'required_without:id|string',
             'date_value' => 'required|date',
         ]);
 
-        $date = \App\Models\PpmLotDate::findOrFail($validated['id']);
-        $date->update(['date_value' => $validated['date_value']]);
+        if (!empty($validated['id'])) {
+            $date = \App\Models\PpmLotDate::findOrFail($validated['id']);
+            $date->update(['date_value' => $validated['date_value']]);
+        } else {
+            $date = \App\Models\PpmLotDate::create([
+                'ppm_lot_id' => $validated['ppm_lot_id'],
+                'milestone_type' => $validated['milestone_type'],
+                'date_category' => $validated['date_category'],
+                'date_value' => $validated['date_value'],
+            ]);
+        }
 
         return response()->json([
             'success' => true,
-            'message' => 'Date mise à jour avec succès.',
-            'date_value' => $date->date_value
+            'message' => 'Date enregistrée avec succès.',
+            'date_value' => $date->date_value,
+            'date' => $date
         ]);
     }
 
