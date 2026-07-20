@@ -1720,7 +1720,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">Système de Passation</label>
-                 <select class="kt-select" name="system_type" id="spm_system_type" required>
+                 <select class="kt-select" name="system_type" id="spm_system_type" data-kt-select="true" required>
                   <option value="" disabled selected>Sélectionner le système</option>
                   <option value="SPME">SPME</option>
                   <option value="MPAB">MPAB</option>
@@ -1730,7 +1730,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">Type de Package</label>
-                 <select class="kt-select" name="package_type" id="spm_package_type" required>
+                 <select class="kt-select" name="package_type" id="spm_package_type" data-kt-select="true" required>
                   <option value="" disabled selected>Sélectionner le type</option>
                   <option value="Travaux">Travaux</option>
                   <option value="Biens">Biens</option>
@@ -1825,7 +1825,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">MF ou DQE</label>
-                 <select class="kt-select" name="amount_type" id="lot_amount_type" data-control="select2" data-hide-search="true">
+                 <select class="kt-select" name="amount_type" id="lot_amount_type" data-kt-select="true">
                   <option value="">Sélectionner</option>
                   <option value="MF">Montant Forfaitaire (MF)</option>
                   <option value="DQE">Devis Quantitatif Estimatif (DQE)</option>
@@ -1850,7 +1850,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">Mode de passation</label>
-                 <select class="kt-select" name="procurement_method" id="lot_procurement_method" data-control="select2" data-hide-search="true">
+                 <select class="kt-select" name="procurement_method" id="lot_procurement_method" data-kt-select="true">
                   <option value="">Sélectionner</option>
                   <option value="AOO">AOO</option>
                   <option value="DRP">DRP</option>
@@ -1862,7 +1862,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">Type de Qualification</label>
-                 <select class="kt-select" name="qualification_type" id="lot_qualification_type" data-control="select2" data-hide-search="true">
+                 <select class="kt-select" name="qualification_type" id="lot_qualification_type" data-kt-select="true">
                   <option value="">Sélectionner</option>
                   <option value="Pré-Qualification">Pré-Qualification</option>
                   <option value="Post-Qualification">Post-Qualification</option>
@@ -1872,7 +1872,7 @@
                <div class="w-full">
                 <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
                  <label class="kt-form-label flex items-center gap-1 max-w-56">Contrôle et Audit</label>
-                 <select class="kt-select" name="control_audit" id="lot_control_audit" data-control="select2" data-hide-search="true">
+                 <select class="kt-select" name="control_audit" id="lot_control_audit" data-kt-select="true">
                   <option value="">Sélectionner</option>
                   <option value="Préalable">Préalable</option>
                   <option value="à Postériori">à Postériori</option>
