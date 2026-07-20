@@ -25,7 +25,9 @@ class PpmResource extends JsonResource
             'lines' => $this->lines->map(function($line) {
                 return [
                     'id' => $line->id,
+                    'system_type' => $line->system_type,
                     'package_type' => $line->package_type,
+                    'package_number' => $line->package_number,
                     'package_description' => $line->package_description,
                     'lots' => $line->lots->map(function($lot) {
                         return [

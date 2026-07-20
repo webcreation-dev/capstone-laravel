@@ -10,9 +10,23 @@ class PpmLine extends Model
 
     protected $fillable = [
         'ppm_id',
+        'system_type',
         'package_type',
         'package_description',
     ];
+
+    protected $appends = ['package_number'];
+
+    public function getPackageNumberAttribute()
+    {
+        $prefix = 'X';
+        if ($this->package_type === 'Travaux') $prefix = 'T';
+        elseif ($this->package_type === 'Biens') $prefix = 'B';
+        elseif ($this->package_type === 'Consultant') $prefix = 'CF';
+
+        // Format as T-01, B-01, CF-01 using str_pad
+        return $prefix . '-' . str_pad($this->id, 2, '0', STR_PAD_LEFT);
+    }
 
     public function ppm()
     {

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('ppm_lines', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ppm_id')->constrained('ppms')->cascadeOnDelete();
-            $table->string('package_type');
+            $table->enum('system_type', ['SPME', 'MPAB'])->default('SPME');
+            $table->enum('package_type', ['Travaux', 'Biens', 'Consultant']);
             $table->text('package_description')->nullable();
             $table->timestamps();
         });
