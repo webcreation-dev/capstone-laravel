@@ -61,6 +61,63 @@ class PpmController extends Controller
         return response()->json(['success' => true, 'message' => 'PPM supprimé avec succès.']);
     }
 
+    public function saveLine(Request $request)
+    {
+        $validated = $request->validate([
+            'ppm_id' => 'required|exists:ppms,id',
+            'line_id' => 'nullable|exists:ppm_lines,id',
+            'system_type' => 'required|string',
+            'package_type' => 'required|string',
+            'package_description' => 'required|string',
+            'lots' => 'nullable|array',
+            'lots.*.id' => 'nullable|exists:ppm_lots,id',
+            'lots.*.name' => 'required_with:lots|string',
+            'lots.*.description' => 'nullable|string',
+        ]);
+
+        if (empty($validated['line_id'])) {
+            $line = \App\Models\PpmLine::create([
+                'ppm_id' => $validated['ppm_id'],
+                'system_type' => $validated['system_type'],
+                'package_type' => $validated['package_type'],
+                'package_description' => $validated['package_description'],
+            ]);
+        } else {
+            $line = \App\Models\PpmLine::findOrFail($validated['line_id']);
+            $line->update([
+                'system_type' => $validated['system_type'],
+                'package_type' => $validated['package_type'],
+                'package_description' => $validated['package_description'],
+            ]);
+        }
+
+        // Gestion des lots
+        $submittedLotIds = [];
+        if (!empty($validated['lots'])) {
+            foreach ($validated['lots'] as $lotData) {
+                if (empty($lotData['id'])) {
+                    $lot = $line->lots()->create([
+                        'name' => $lotData['name'],
+                        'description' => $lotData['description'] ?? null,
+                    ]);
+                    $submittedLotIds[] = $lot->id;
+                } else {
+                    $lot = \App\Models\PpmLot::findOrFail($lotData['id']);
+                    $lot->update([
+                        'name' => $lotData['name'],
+                        'description' => $lotData['description'] ?? null,
+                    ]);
+                    $submittedLotIds[] = $lot->id;
+                }
+            }
+        }
+
+        // Supprimer les lots qui ne sont plus dans la liste
+        $line->lots()->whereNotIn('id', $submittedLotIds)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Ligne et lots enregistrés avec succès.']);
+    }
+
     public function show($id)
     {
         $ppm = \App\Models\Ppm::with(['lines.lots.dates'])->findOrFail($id);

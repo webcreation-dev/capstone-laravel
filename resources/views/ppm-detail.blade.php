@@ -14,7 +14,7 @@
                                 </div> -->
                 </div>
                 <div class="flex items-center gap-2.5">
-                    <button class="kt-btn kt-btn-outline" data-kt-drawer-toggle="#add_spm_drawer">
+                    <button class="kt-btn kt-btn-outline" data-kt-drawer-toggle="#add_spm_drawer" onclick="openAddSpm()">
                         <i class="ki-filled ki-plus"></i> Ajouter un SPM
                     </button>
                     <button class="kt-btn kt-btn-primary">
@@ -181,10 +181,12 @@
                                                         <!-- Bouton d'édition au survol -->
                                                         <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
                                                                 data-kt-drawer-toggle="#add_spm_drawer"
+                                                                onclick="openEditSpm(this)"
                                                                 data-spm-id="{{ $line['id'] }}"
                                                                 data-spm-system-type="{{ $line['system_type'] }}"
                                                                 data-spm-package-type="{{ $line['package_type'] }}"
                                                                 data-spm-description="{{ $line['package_description'] }}"
+                                                                data-spm-lots="{{ json_encode($line['lots']) }}"
                                                                 title="Modifier le SPM">
                                                             <i class="ki-filled ki-pencil text-lg"></i>
                                                         </button>
@@ -266,10 +268,12 @@
                                                 <!-- Bouton d'édition au survol -->
                                                 <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
                                                         data-kt-drawer-toggle="#add_spm_drawer"
+                                                        onclick="openEditSpm(this)"
                                                         data-spm-id="{{ $line['id'] }}"
                                                         data-spm-system-type="{{ $line['system_type'] }}"
                                                         data-spm-package-type="{{ $line['package_type'] }}"
                                                         data-spm-description="{{ $line['package_description'] }}"
+                                                        data-spm-lots="[]"
                                                         title="Modifier le SPM">
                                                     <i class="ki-filled ki-pencil text-lg"></i>
                                                 </button>
@@ -390,4 +394,121 @@
                 }
             })();
         </script>
+                <script>
+                (function() {
+                    let lotIndexCounter = 0;
+                    
+                    // --- Gestion de l'ajout de lots dynamiques ---
+                    window.addLot = function(lotData = null) {
+                        const template = document.getElementById('lot_template').innerHTML;
+                        const container = document.getElementById('lots_container');
+                        
+                        // Remplacement de l'index dans le template
+                        let newLotHtml = template.replace(/__INDEX__/g, lotIndexCounter);
+                        
+                        // Création d'un élément div temporaire pour manipuler le HTML
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = newLotHtml.trim();
+                        const newLotEl = tempDiv.firstChild;
+                        
+                        // Si des données sont fournies (édition), on pré-remplit les champs
+                        if (lotData) {
+                            if(lotData.id) newLotEl.querySelector('.lot-id').value = lotData.id;
+                            if(lotData.name) newLotEl.querySelector('.lot-name').value = lotData.name;
+                            if(lotData.description) newLotEl.querySelector('.lot-description').value = lotData.description;
+                        }
+                        
+                        // Gestion de la suppression
+                        const removeBtn = newLotEl.querySelector('.btn-remove-lot');
+                        if (removeBtn) {
+                            removeBtn.addEventListener('click', function() {
+                                newLotEl.remove();
+                            });
+                        }
+                        
+                        container.appendChild(newLotEl);
+                        lotIndexCounter++;
+                    };
+
+                    // --- Gestion de l'ouverture du Drawer (Édition vs Ajout) ---
+                    window.openEditSpm = function(btn) {
+                        // C'est une modification
+                        document.getElementById('spm_drawer_title').textContent = 'Modifier Ligne PPM';
+                        document.getElementById('spm_line_id').value = btn.dataset.spmId || '';
+                        document.getElementById('spm_system_type').value = btn.dataset.spmSystemType || '';
+                        document.getElementById('spm_package_type').value = btn.dataset.spmPackageType || '';
+                        document.getElementById('spm_package_description').value = btn.dataset.spmDescription || '';
+                        
+                        // Vider les lots existants dans le conteneur
+                        document.getElementById('lots_container').innerHTML = '';
+                        lotIndexCounter = 0;
+                        
+                        // Charger les lots
+                        try {
+                            const lots = JSON.parse(btn.dataset.spmLots || '[]');
+                            if (lots.length > 0) {
+                                lots.forEach(lot => addLot(lot));
+                            } else {
+                                addLot(); // Au moins un lot vide
+                            }
+                        } catch(e) {
+                            console.error("Erreur parsing lots:", e);
+                            addLot();
+                        }
+                    };
+
+                    window.openAddSpm = function() {
+                        // C'est un ajout (Bouton "Ajouter un SPM" en haut)
+                        document.getElementById('spm_drawer_title').textContent = 'Nouvelle Ligne PPM';
+                        document.getElementById('spm_form').reset();
+                        document.getElementById('spm_line_id').value = '';
+                        document.getElementById('lots_container').innerHTML = '';
+                        lotIndexCounter = 0;
+                        addLot(); // Un lot vide par défaut
+                    };
+
+                    // --- Envoi du formulaire (AJAX) ---
+                    window.saveSpm = async function() {
+                        const form = document.getElementById('spm_form');
+                        const formData = new FormData(form);
+                        
+                        // Ajouter le ppm_id (depuis l'URL)
+                        const ppmId = "{{ $ppm['id'] }}";
+                        formData.append('ppm_id', ppmId);
+                        
+                        // Afficher un état de chargement sur le bouton
+                        const btn = document.getElementById('btn_save_spm');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<i class="ki-filled ki-loading"></i> Enregistrement...';
+                        btn.disabled = true;
+
+                        try {
+                            const response = await fetch('/ppm-lines/save', {
+                                method: 'POST',
+                                headers: {
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                    'Accept': 'application/json'
+                                },
+                                body: formData
+                            });
+                            
+                            const data = await response.json();
+                            
+                            if (response.ok && data.success) {
+                                // Succès -> recharger la page
+                                window.location.reload();
+                            } else {
+                                alert(data.message || "Erreur lors de l'enregistrement");
+                                btn.innerHTML = originalText;
+                                btn.disabled = false;
+                            }
+                        } catch (error) {
+                            console.error("Erreur serveur:", error);
+                            alert("Une erreur inattendue s'est produite.");
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                        }
+                    };
+                })();
+                </script>
 @endsection
