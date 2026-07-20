@@ -58,8 +58,8 @@ class PpmSeeder extends Seeder
                     'contract_amount' => rand(10000000, 50000000),
                 ]);
 
-                // Milestones de test
-                $testMilestones = ['submission', 'notice_no', 'ias', 'signature'];
+                // Toutes les étapes
+                $testMilestones = ['submission', 'notice_no', 'ias', 'deposit_opening', 'report_submission', 'no_objection', 'attribution', 'signature', 'completion'];
                 
                 foreach ($testMilestones as $milestone) {
                     $baseDate = now()->addDays(rand(10, 60));
@@ -81,12 +81,33 @@ class PpmSeeder extends Seeder
                     }
 
                     // Parfois un 'real'
-                    if (rand(1, 100) > 70) {
-                        $lot->dates()->create([
+                    if (rand(1, 100) > 60) {
+                        $realDate = $lot->dates()->create([
                             'milestone_type' => $milestone,
                             'date_category' => 'real',
                             'date_value' => $baseDate->copy()->addDays(rand(0, 20)),
                         ]);
+                        
+                        // Ajouter des commentaires
+                        $numComments = rand(1, 3);
+                        for ($c = 0; $c < $numComments; $c++) {
+                            $realDate->comments()->create([
+                                'content' => 'Ceci est un commentaire de suivi généré pour l\'étape ' . $milestone . '. Tout s\'est déroulé comme prévu.',
+                            ]);
+                        }
+
+                        // Ajouter des documents
+                        $numDocs = rand(1, 2);
+                        $docTypes = ['pdf', 'docx', 'xlsx', 'png'];
+                        for ($d = 0; $d < $numDocs; $d++) {
+                            $type = $docTypes[array_rand($docTypes)];
+                            $realDate->documents()->create([
+                                'name' => 'Justificatif_' . ucfirst($milestone) . '_' . ($d + 1) . '.' . $type,
+                                'path' => '/storage/fake_path/' . uniqid() . '.' . $type,
+                                'type' => $type,
+                                'size' => rand(102400, 5242880), // 100KB to 5MB
+                            ]);
+                        }
                     }
                 }
             }

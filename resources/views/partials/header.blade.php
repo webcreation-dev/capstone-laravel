@@ -1562,83 +1562,9 @@
                                         </div>
                                         <div class="border-b border-b-border"></div>
 
-                                        <!-- Commentaire 1 -->
-                                        <div class="flex grow gap-2.5 px-5">
-                                            <div class="kt-avatar size-8">
-                                                <div class="kt-avatar-image">
-                                                    <img alt="avatar" src="{{ asset('assets/media/avatars/300-4.png') }}" />
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-col gap-2 grow">
-                                                <div class="flex flex-col gap-1">
-                                                    <div class="text-sm font-medium">
-                                                        <a class="hover:text-primary text-mono font-semibold" href="#">
-                                                            Jean Dupont
-                                                        </a>
-                                                        <span class="text-secondary-foreground">
-                                                            a ajouté un commentaire
-                                                        </span>
-                                                    </div>
-                                                    <span
-                                                        class="flex items-center text-xs font-medium text-muted-foreground">
-                                                        03 Juil 2027, 14:30
-                                                    </span>
-                                                </div>
-                                                <div class="text-sm text-secondary-foreground">
-                                                    Date de soumission effectuée avec succès. Le dossier a été déposé
-                                                    auprès de la commission d'appel d'offres.
-                                                </div>
-                                                <div class="flex gap-2">
-                                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs">
-                                                        <i class="ki-filled ki-pencil text-xs"></i>
-                                                        Modifier
-                                                    </button>
-                                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs text-danger">
-                                                        <i class="ki-filled ki-trash text-xs"></i>
-                                                        Supprimer
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="border-b border-b-border"></div>
-
-                                        <!-- Commentaire 2 -->
-                                        <div class="flex grow gap-2.5 px-5">
-                                            <div class="kt-avatar size-8">
-                                                <div class="kt-avatar-image">
-                                                    <img alt="avatar" src="{{ asset('assets/media/avatars/300-5.png') }}" />
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-col gap-2 grow">
-                                                <div class="flex flex-col gap-1">
-                                                    <div class="text-sm font-medium">
-                                                        <a class="hover:text-primary text-mono font-semibold" href="#">
-                                                            Marie Lambert
-                                                        </a>
-                                                        <span class="text-secondary-foreground">
-                                                            a ajouté un commentaire
-                                                        </span>
-                                                    </div>
-                                                    <span
-                                                        class="flex items-center text-xs font-medium text-muted-foreground">
-                                                        03 Juil 2027, 16:45
-                                                    </span>
-                                                </div>
-                                                <div class="text-sm text-secondary-foreground">
-                                                    Confirmation reçue de l'administration. Le dossier est complet et
-                                                    conforme aux exigences.
-                                                </div>
-                                                <div class="flex gap-2">
-                                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs">
-                                                        <i class="ki-filled ki-pencil text-xs"></i>
-                                                        Modifier
-                                                    </button>
-                                                    <button class="kt-btn kt-btn-ghost kt-btn-sm text-xs text-danger">
-                                                        <i class="ki-filled ki-trash text-xs"></i>
-                                                        Supprimer
-                                                    </button>
-                                                </div>
-                                            </div>
+                                        <div id="date_details_comments_list" class="flex flex-col px-5 gap-4">
+                                            <!-- Les commentaires seront chargés ici en AJAX -->
+                                            <div class="text-sm text-muted-foreground italic">Chargement des commentaires...</div>
                                         </div>
                                         <div class="border-b border-b-border"></div>
 
@@ -1708,68 +1634,9 @@
 
                                         <div class="border-b border-b-border"></div>
 
-                                        <!-- Document 1 -->
-                                        <div class="flex grow gap-2.5 px-5">
-                                            <div class="kt-avatar size-10">
-                                                <img class="h-10" src="{{ asset('assets/media/file-types/pdf.svg') }}" />
-                                            </div>
-                                            <div class="flex flex-col gap-1 grow">
-                                                <div class="flex items-center justify-between">
-                                                    <a class="hover:text-primary font-medium text-secondary-foreground text-sm"
-                                                        href="#">
-                                                        justification_soumission.pdf
-                                                    </a>
-                                                    <div class="flex gap-1">
-                                                        <button class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm">
-                                                            <i class="ki-filled ki-download"></i>
-                                                        </button>
-                                                        <button
-                                                            class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm text-danger">
-                                                            <i class="ki-filled ki-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                                                    <span>2.3 MB</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>Ajouté par Jean Dupont</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>03 Juil 2027, 14:35</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="border-b border-b-border"></div>
-
-                                        <!-- Document 2 -->
-                                        <div class="flex grow gap-2.5 px-5">
-                                            <div class="kt-avatar size-10">
-                                                <img class="h-10" src="{{ asset('assets/media/file-types/word.svg') }}" />
-                                            </div>
-                                            <div class="flex flex-col gap-1 grow">
-                                                <div class="flex items-center justify-between">
-                                                    <a class="hover:text-primary font-medium text-secondary-foreground text-sm"
-                                                        href="#">
-                                                        rapport_technique.docx
-                                                    </a>
-                                                    <div class="flex gap-1">
-                                                        <button class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm">
-                                                            <i class="ki-filled ki-download"></i>
-                                                        </button>
-                                                        <button
-                                                            class="kt-btn kt-btn-ghost kt-btn-icon kt-btn-sm text-danger">
-                                                            <i class="ki-filled ki-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center gap-2 text-xs text-muted-foreground">
-                                                    <span>1.8 MB</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>Ajouté par Marie Lambert</span>
-                                                    <span class="rounded-full size-1 bg-mono/30"></span>
-                                                    <span>03 Juil 2027, 16:50</span>
-                                                </div>
-                                            </div>
+                                        <div id="date_details_docs_list" class="flex flex-col px-5 gap-2 mt-4">
+                                            <!-- Les documents seront chargés ici en AJAX -->
+                                            <div class="text-sm text-muted-foreground italic">Chargement des documents...</div>
                                         </div>
 
                                         <div class="border-b border-b-border"></div>

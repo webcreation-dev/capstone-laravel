@@ -19,4 +19,14 @@ class PpmLotDate extends Model
     {
         return $this->belongsTo(PpmLot::class, 'ppm_lot_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(PpmLotDateComment::class, 'ppm_lot_date_id');
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(PpmLotDateDocument::class, 'ppm_lot_date_id');
+    }
 }

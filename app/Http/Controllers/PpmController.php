@@ -151,4 +151,14 @@ class PpmController extends Controller
             'ppm' => (new PpmResource($ppm))->resolve()
         ]);
     }
+
+    public function getDateDetails($dateId)
+    {
+        $date = \App\Models\PpmLotDate::with(['comments', 'documents'])->findOrFail($dateId);
+        return response()->json([
+            'success' => true,
+            'comments' => $date->comments,
+            'documents' => $date->documents,
+        ]);
+    }
 }

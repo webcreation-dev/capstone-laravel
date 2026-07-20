@@ -69,17 +69,20 @@
                                 </tr>
                                 <!-- Columns Header - Niveau 2 (fond gris moyen) -->
                                 <tr class="bg-gray-100 text-gray-700">
-                                    <th
-                                        class="sticky left-0 top-0 bg-gray-100 z-[34] w-[150px] border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
-                                        SPM</th>
-                                    <th
-                                        class="sticky left-[150px] top-0 bg-gray-100 z-[33] w-[100px] border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
-                                        N° Package</th>
-                                    <th
-                                        class="sticky left-[250px] top-0 bg-gray-100 z-[32] w-[200px] min-w-[200px] max-w-[200px] whitespace-normal border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
-                                        Description du Package</th>
-                                    <th style="left: 450px;"
-                                        class="sticky top-0 bg-gray-100 z-[31] w-[130px] min-w-[130px] max-w-[130px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
+                                    <th style="z-index: 50;"
+                                        class="sticky left-0 top-0 bg-gray-100 w-[150px] border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
+                                        SYSTÈME
+                                    </th>
+                                    <th style="left: 150px; z-index: 50;"
+                                        class="sticky top-0 bg-gray-100 w-[100px] border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
+                                        N° PACKAGE
+                                    </th>
+                                    <th style="left: 250px; z-index: 50;"
+                                        class="sticky top-0 bg-gray-100 w-[200px] min-w-[200px] max-w-[200px] whitespace-normal border-r border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
+                                        DESCRIPTION PACKAGE
+                                    </th>
+                                    <th style="left: 450px; z-index: 50;"
+                                        class="sticky top-0 bg-gray-100 w-[130px] min-w-[130px] max-w-[130px] border-r-2 border-b-2 border-gray-400 py-2.5 px-3 text-xs font-semibold uppercase">
                                         Lot</th>
                                     <th
                                         class="bg-gray-100 min-w-[200px] whitespace-normal border-r-2 border-b-2 border-gray-300 py-2.5 px-3 text-xs font-semibold uppercase">
@@ -173,7 +176,7 @@
 
                                                 @if($lotIdx === 0 && $loop->first)
                                                     <!-- Début SPM -->
-                                                    <td class="cell-hover-container relative sticky left-0 bg-white group-hover:bg-gray-50 z-[14] font-bold text-sm border-r border-gray-300 w-[150px] min-w-[150px] max-w-[150px]"
+                                                    <td style="z-index: 40;" class="cell-hover-container relative sticky left-0 bg-white group-hover:bg-gray-50 font-bold text-sm border-r border-gray-300 w-[150px] min-w-[150px] max-w-[150px]"
                                                         rowspan="{{ $lineRowSpan }}">
                                                         {{ $line['system_type'] }}
                                                         <!-- <br><span class="text-xs font-normal text-muted-foreground">{{ $line['package_type'] }}</span> -->
@@ -190,11 +193,11 @@
                                                             <i class="ki-filled ki-pencil text-lg"></i>
                                                         </button>
                                                     </td>
-                                                    <td class="sticky left-[150px] bg-white group-hover:bg-gray-50 z-[13] font-bold border-r border-gray-300 w-[100px] min-w-[100px] max-w-[100px]"
+                                                    <td style="left: 150px; z-index: 40;" class="sticky bg-white group-hover:bg-gray-50 font-bold border-r border-gray-300 w-[100px] min-w-[100px] max-w-[100px]"
                                                         rowspan="{{ $lineRowSpan }}">
                                                         {{ $line['package_number'] }}
                                                     </td>
-                                                    <td class="sticky left-[250px] bg-white group-hover:bg-gray-50 z-[12] font-medium border-r border-gray-300 w-[200px] min-w-[200px] max-w-[200px] whitespace-normal break-words"
+                                                    <td style="left: 250px; z-index: 40;" class="sticky bg-white group-hover:bg-gray-50 font-medium border-r border-gray-300 w-[200px] min-w-[200px] max-w-[200px] whitespace-normal break-words"
                                                         rowspan="{{ $lineRowSpan }}">
                                                         {{ $line['package_description'] ?: 'Aucune description' }}
                                                     </td>
@@ -202,7 +205,7 @@
 
                                                 @if($loop->first)
                                                     <!-- Début Lot -->
-                                                    <td style="left: 450px;" class="cell-hover-container relative sticky bg-white z-[11] font-bold border-r-2 border-gray-400 w-[130px] min-w-[130px] max-w-[130px] col-separator group-hover:bg-gray-50"
+                                                    <td style="left: 450px; z-index: 40;" class="cell-hover-container relative sticky bg-white font-bold border-r-2 border-gray-400 w-[130px] min-w-[130px] max-w-[130px] col-separator group-hover:bg-gray-50"
                                                         rowspan="3">
                                                         {{ $lot['name'] }}
                                                         <button class="edit-btn absolute top-1 right-1 transition-opacity text-muted-foreground hover:text-primary"
@@ -262,6 +265,7 @@
                                                                     title="Voir commentaires et fichiers"
                                                                     data-kt-drawer-toggle="#date_details_drawer"
                                                                     onclick="openDateModal(this, 'view')"
+                                                                    data-id="{{ $lot['dates'][$milestone][$catKey]['id'] ?? '' }}"
                                                                     data-spm="{{ $line['system_type'] }}"
                                                                     data-lot="{{ $lot['name'] }}"
                                                                     data-milestone="{{ $milestone }}"
@@ -270,7 +274,7 @@
                                                                     <i class="ki-filled ki-eye text-xs"></i>
                                                                 </button>
                                                             @else
-                                                                <span></span>
+                                                                <span class="text-sm text-muted-foreground">-</span>
                                                                 <button
                                                                     class="edit-btn kt-btn kt-btn-xs kt-btn-icon kt-btn-ghost text-muted-foreground hover:text-primary shrink-0"
                                                                     title="Ajouter une date"
@@ -673,13 +677,13 @@
                 </script>
 
                 <script>
-                // --- Gestion de la modale des dates ---
-                function openDateModal(button, mode) {
+                  function openDateModal(button, mode) {
                     const spm = button.getAttribute('data-spm') || '';
                     const lot = button.getAttribute('data-lot') || '';
                     const milestone = button.getAttribute('data-milestone') || '';
                     const category = button.getAttribute('data-category') || '';
                     const existingDate = button.getAttribute('data-date') || '';
+                    const dateId = button.getAttribute('data-id') || '';
                     
                     // Mettre à jour le fil d'ariane
                     const contextPath = document.getElementById('date_modal_context_path');
@@ -700,28 +704,109 @@
                         editMode.classList.remove('hidden');
                         editMode.classList.add('flex');
                         dateInput.value = ''; // Champ vide
-                        cancelBtn.classList.add('hidden'); // Pas d'annulation si on vient d'ajouter (sauf si on ferme le drawer)
-                        
-                        // Optionnel: focus sur l'input après l'ouverture du drawer
+                        cancelBtn.classList.add('hidden'); // Pas d'annulation si on vient d'ajouter
                         setTimeout(() => dateInput.focus(), 300);
+                        clearCommentsAndDocs();
                     } else if (mode === 'view') {
-                        // Mode Vue: on affiche le texte par défaut
                         viewMode.classList.remove('hidden');
                         viewMode.classList.add('flex');
-                        editMode.classList.remove('flex');
                         editMode.classList.add('hidden');
-                        cancelBtn.classList.remove('hidden'); // On peut annuler pour revenir au mode vue
+                        cancelBtn.classList.remove('hidden');
                         
                         if (existingDate) {
-                            // Formater la date pour l'affichage (optionnel, fait côté serveur d'habitude, mais on le met tel quel ou on parse)
                             const d = new Date(existingDate);
                             const options = { day: '2-digit', month: 'long', year: 'numeric' };
                             dateText.innerHTML = `Date de ${category.toLowerCase()} : ${d.toLocaleDateString('fr-FR', options)}`;
-                            dateInput.value = existingDate.split('T')[0]; // Pré-remplir l'input pour édition future
+                            dateInput.value = existingDate.split('T')[0];
                         } else {
                             dateText.innerHTML = `Date de ${category.toLowerCase()} : Non définie`;
                         }
+                        
+                        if (dateId) {
+                            fetchDateDetails(dateId);
+                        } else {
+                            clearCommentsAndDocs();
+                        }
                     }
+                }
+                
+                function clearCommentsAndDocs() {
+                    const commentsContainer = document.getElementById('date_details_comments_list');
+                    if (commentsContainer) commentsContainer.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun commentaire.</div>';
+                    
+                    const docsContainer = document.getElementById('date_details_docs_list');
+                    if (docsContainer) docsContainer.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun document joint.</div>';
+                }
+                
+                function fetchDateDetails(dateId) {
+                    fetch(`/ppm-lot-dates/${dateId}/details`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                renderComments(data.comments);
+                                renderDocuments(data.documents);
+                            }
+                        })
+                        .catch(error => console.error('Erreur lors du chargement des détails:', error));
+                }
+                
+                function renderComments(comments) {
+                    const container = document.getElementById('date_details_comments_list');
+                    if (!container) return;
+                    
+                    if (!comments || comments.length === 0) {
+                        container.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun commentaire.</div>';
+                        return;
+                    }
+                    
+                    container.innerHTML = comments.map(comment => `
+                        <div class="flex flex-col gap-1 mb-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span class="text-xs font-semibold text-primary">U</span>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-900">Utilisateur</span>
+                                <span class="text-xs text-muted-foreground">${new Date(comment.created_at).toLocaleDateString('fr-FR')}</span>
+                            </div>
+                            <div class="text-sm text-gray-700 bg-light p-3 rounded-lg rounded-tl-none border border-border">
+                                ${comment.content}
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                
+                function renderDocuments(documents) {
+                    const container = document.getElementById('date_details_docs_list');
+                    if (!container) return;
+                    
+                    if (!documents || documents.length === 0) {
+                        container.innerHTML = '<div class="text-sm text-muted-foreground italic">Aucun document joint.</div>';
+                        return;
+                    }
+                    
+                    container.innerHTML = documents.map(doc => {
+                        let icon = 'ki-file';
+                        if (doc.type === 'pdf') icon = 'ki-file-pdf text-danger';
+                        else if (doc.type === 'docx' || doc.type === 'doc') icon = 'ki-file-doc text-primary';
+                        else if (doc.type === 'xlsx' || doc.type === 'xls') icon = 'ki-file-sheet text-success';
+                        else if (['png', 'jpg', 'jpeg'].includes(doc.type)) icon = 'ki-picture text-info';
+                        
+                        return `
+                        <div class="flex items-center justify-between p-3 border border-border rounded-lg mb-2 hover:bg-light/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded bg-light flex items-center justify-center">
+                                    <i class="ki-filled ${icon} text-2xl"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <a href="#" class="text-sm font-semibold text-gray-900 hover:text-primary transition-colors">${doc.name}</a>
+                                    <span class="text-xs text-muted-foreground">${Math.round((doc.size || 0) / 1024)} KB</span>
+                                </div>
+                            </div>
+                            <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light hover:text-primary shrink-0" title="Télécharger">
+                                <i class="ki-filled ki-down"></i>
+                            </button>
+                        </div>
+                    `}).join('');
                 }
 
                 function toggleDateEditMode() {
