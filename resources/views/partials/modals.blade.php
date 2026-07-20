@@ -1634,7 +1634,7 @@
     data-kt-drawer="true" data-kt-drawer-container="body" id="create_ppm_drawer">
     <div class="flex items-center justify-between gap-2.5 text-sm text-mono font-semibold px-5 py-3 border-b border-b-border"
         id="create_ppm_header">
-        Nouveau Projet PPM
+        <span id="create_ppm_title">Nouveau Projet PPM</span>
         <button class="kt-btn kt-btn-sm kt-btn-icon kt-btn-dim shrink-0"
             data-kt-drawer-dismiss="true">
             <i class="ki-filled ki-cross"></i>
@@ -1642,29 +1642,31 @@
     </div>
     
     <div class="kt-scrollable grow kt-scrollable-y p-5" data-kt-scrollable="true" data-kt-scrollable-dependencies="#create_ppm_header, #create_ppm_footer" data-kt-scrollable-offset="0px">
-        <form class="flex flex-col gap-5">
+        <form class="flex flex-col gap-5" id="form_ppm">
+            <input type="hidden" id="ppm_id" name="id" value="" />
+            
             <!-- Pays / Organe d'exécution -->
             <div class="flex flex-col gap-2">
                 <label class="kt-form-label text-sm font-medium">Pays / Organe d'exécution</label>
-                <input type="text" class="kt-input text-sm" placeholder="Ex: Sénégal / Ministère de l'Éducation" />
+                <input type="text" id="ppm_country_executing_agency" class="kt-input text-sm" placeholder="Ex: Sénégal / Ministère de l'Éducation" />
             </div>
 
             <!-- Nom du dossier -->
             <div class="flex flex-col gap-2">
                 <label class="kt-form-label text-sm font-medium">Nom du dossier</label>
-                <input type="text" class="kt-input text-sm" placeholder="Saisir le nom du dossier" />
+                <input type="text" id="ppm_dossier_name" class="kt-input text-sm" placeholder="Saisir le nom du dossier" />
             </div>
 
             <!-- Numéro du Prêt / Don -->
             <div class="flex flex-col gap-2">
                 <label class="kt-form-label text-sm font-medium">Numéro du Prêt / Don</label>
-                <input type="text" class="kt-input text-sm" placeholder="Saisir le numéro" />
+                <input type="text" id="ppm_loan_grant_number" class="kt-input text-sm" placeholder="Saisir le numéro" />
             </div>
 
             <!-- Unité de compte (CFA) -->
             <div class="flex flex-col gap-2">
                 <label class="kt-form-label text-sm font-medium">Unité de compte (CFA)</label>
-                <input type="text" class="kt-input text-sm" placeholder="Ex: FCFA, USD, EUR..." />
+                <input type="text" id="ppm_currency_unit" class="kt-input text-sm" placeholder="Ex: FCFA, USD, EUR..." />
             </div>
         </form>
     </div>
@@ -1672,7 +1674,7 @@
     <!-- Footer -->
     <div class="flex items-center justify-end gap-2.5 px-5 py-4 border-t border-t-border" id="create_ppm_footer">
         <button class="kt-btn kt-btn-sm kt-btn-light" data-kt-drawer-dismiss="true">Annuler</button>
-        <button class="kt-btn kt-btn-sm kt-btn-primary">Créer le projet</button>
+        <button class="kt-btn kt-btn-sm kt-btn-primary" id="btn_save_ppm">Enregistrer</button>
     </div>
 </div>
 <!-- End of Create PPM Drawer -->

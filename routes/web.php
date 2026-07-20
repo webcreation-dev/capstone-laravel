@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('ppm-list');
-});
+use App\Http\Controllers\PpmController;
+
+Route::get('/', [PpmController::class, 'index']);
+Route::post('/ppms/save', [PpmController::class, 'save']);
+Route::delete('/ppms/delete/{id}', [PpmController::class, 'delete']);
+
+Route::get('/ppms/{id}', [PpmController::class, 'show'])->name('ppms.show');
 
 Route::get('/form', function () {
     return view('ppm-form');
-});
-
-Route::get('/detail', function () {
-    return view('ppm-detail');
 });

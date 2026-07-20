@@ -150,5 +150,7 @@ License: https://keenthemes.com/metronic/tailwind/docs/getting-started/license
             }
         });
     </script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
