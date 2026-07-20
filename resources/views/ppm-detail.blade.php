@@ -29,13 +29,16 @@
                 <!-- Main Layout Container (Table + Timeline Side by Side) -->
                 <div class="kt-container-fluid flex items-start gap-5 transition-all duration-300 relative">
                     <!-- Main Table Container -->
-                    <div class="kt-card grow min-w-0 overflow-hidden rounded-none" style="border-radius: 0 !important;">
-                        <div class="kt-card-header justify-center">
-                            <h3 class="kt-card-title text-center uppercase">{{ $ppm['dossier_name'] }}
+                    <div class="kt-card grow min-w-0 overflow-hidden rounded-none bg-white" style="border-radius: 0 !important;" id="ppm-table-card">
+                        <div class="kt-card-header justify-center relative">
+                            <h3 class="kt-card-title text-center uppercase px-10">{{ $ppm['dossier_name'] }}
                                 <span class="text-sm text-muted-foreground ml-2">({{ $ppm['reference'] }})</span>
                             </h3>
+                            <button id="btn-fullscreen" class="kt-btn kt-btn-sm kt-btn-icon kt-btn-light absolute right-4 top-1/2 -translate-y-1/2" title="Plein écran">
+                                <i class="ki-filled ki-maximize text-lg" id="icon-fullscreen"></i>
+                            </button>
                         </div>
-                        <div class="kt-card-content p-0">
+                        <div class="kt-card-content p-0" id="ppm-table-content">
                             <div class="overflow-x-auto">
                                 <table id="ppm-table"
                                     class="kt-table table-auto kt-table-hover align-middle whitespace-nowrap border-separate border-spacing-0">
@@ -310,4 +313,39 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Script Fullscreen -->
+                <script>
+                (function() {
+                    const btnFullscreen = document.getElementById('btn-fullscreen');
+                    const tableCard = document.getElementById('ppm-table-card');
+                    const iconFullscreen = document.getElementById('icon-fullscreen');
+                    const tableContent = document.getElementById('ppm-table-content');
+                    
+                    if (btnFullscreen && tableCard) {
+                        btnFullscreen.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            if (!document.fullscreenElement) {
+                                tableCard.requestFullscreen().catch(err => {
+                                    alert(`Erreur d'activation du plein écran : ${err.message}`);
+                                });
+                            } else {
+                                document.exitFullscreen();
+                            }
+                        });
+
+                        document.addEventListener('fullscreenchange', function() {
+                            if (document.fullscreenElement) {
+                                iconFullscreen.classList.remove('ki-maximize');
+                                iconFullscreen.classList.add('ki-minimize');
+                                tableCard.classList.add('overflow-y-auto');
+                            } else {
+                                iconFullscreen.classList.remove('ki-minimize');
+                                iconFullscreen.classList.add('ki-maximize');
+                                tableCard.classList.remove('overflow-y-auto');
+                            }
+                        });
+                    }
+                })();
+                </script>
 @endsection
