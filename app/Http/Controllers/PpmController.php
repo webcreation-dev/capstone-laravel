@@ -145,7 +145,7 @@ class PpmController extends Controller
 
     public function show($id)
     {
-        $ppm = \App\Models\Ppm::with(['lines.lots.dates'])->findOrFail($id);
+        $ppm = \App\Models\Ppm::with(['lines.lots', 'lines.dates'])->findOrFail($id);
         
         return view('ppm-detail', [
             'ppm' => (new PpmResource($ppm))->resolve()
@@ -154,7 +154,7 @@ class PpmController extends Controller
 
     public function getDateDetails($dateId)
     {
-        $date = \App\Models\PpmLotDate::with(['comments' => function($q) {
+        $date = \App\Models\PpmLineDate::with(['comments' => function($q) {
             $q->orderBy('created_at', 'desc');
         }, 'documents'])->findOrFail($dateId);
         
@@ -168,19 +168,19 @@ class PpmController extends Controller
     public function saveDate(Request $request)
     {
         $validated = $request->validate([
-            'id' => 'nullable|exists:ppm_lot_dates,id',
-            'ppm_lot_id' => 'required_without:id|exists:ppm_lots,id',
+            'id' => 'nullable|exists:ppm_line_dates,id',
+            'ppm_line_id' => 'required_without:id|exists:ppm_lines,id',
             'milestone_type' => 'required_without:id|string',
             'date_category' => 'required_without:id|string',
             'date_value' => 'required|date',
         ]);
 
         if (!empty($validated['id'])) {
-            $date = \App\Models\PpmLotDate::findOrFail($validated['id']);
+            $date = \App\Models\PpmLineDate::findOrFail($validated['id']);
             $date->update(['date_value' => $validated['date_value']]);
         } else {
-            $date = \App\Models\PpmLotDate::create([
-                'ppm_lot_id' => $validated['ppm_lot_id'],
+            $date = \App\Models\PpmLineDate::create([
+                'ppm_line_id' => $validated['ppm_line_id'],
                 'milestone_type' => $validated['milestone_type'],
                 'date_category' => $validated['date_category'],
                 'date_value' => $validated['date_value'],
@@ -201,7 +201,7 @@ class PpmController extends Controller
             'content' => 'required|string',
         ]);
 
-        $date = \App\Models\PpmLotDate::findOrFail($id);
+        $date = \App\Models\PpmLineDate::findOrFail($id);
         $comment = $date->comments()->create([
             'content' => $validated['content'],
             // 'user_id' => auth()->id() ?? null,
@@ -220,7 +220,7 @@ class PpmController extends Controller
             'files.*' => 'required|file|max:10240' // 10MB
         ]);
 
-        $date = \App\Models\PpmLotDate::findOrFail($id);
+        $date = \App\Models\PpmLineDate::findOrFail($id);
         
         $uploadedDocs = [];
         
@@ -251,7 +251,7 @@ class PpmController extends Controller
             'content' => 'required|string',
         ]);
 
-        $comment = \App\Models\PpmLotDateComment::findOrFail($id);
+        $comment = \App\Models\PpmLineDateComment::findOrFail($id);
         $comment->update(['content' => $validated['content']]);
 
         return response()->json([
@@ -263,7 +263,7 @@ class PpmController extends Controller
 
     public function deleteComment($id)
     {
-        $comment = \App\Models\PpmLotDateComment::findOrFail($id);
+        $comment = \App\Models\PpmLineDateComment::findOrFail($id);
         $comment->delete();
 
         return response()->json([
@@ -274,7 +274,7 @@ class PpmController extends Controller
 
     public function deleteDocument($id)
     {
-        $document = \App\Models\PpmLotDateDocument::findOrFail($id);
+        $document = \App\Models\PpmLineDateDocument::findOrFail($id);
         if (\Storage::disk('public')->exists($document->path)) {
             \Storage::disk('public')->delete($document->path);
         }

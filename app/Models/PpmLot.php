@@ -25,9 +25,4 @@ class PpmLot extends Model
     {
         return $this->belongsTo(PpmLine::class, 'ppm_line_id');
     }
-
-    public function dates()
-    {
-        return $this->hasMany(PpmLotDate::class, 'ppm_lot_id');
-    }
 }

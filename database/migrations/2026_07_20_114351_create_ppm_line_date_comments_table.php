@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ppm_lot_date_comments', function (Blueprint $table) {
+        Schema::create('ppm_line_date_comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ppm_lot_date_id')->constrained('ppm_lot_dates')->cascadeOnDelete();
-            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignId('ppm_line_date_id')->constrained('ppm_line_dates')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
             $table->text('content');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ppm_lot_date_comments');
+        Schema::dropIfExists('ppm_line_date_comments');
     }
 };

@@ -5,21 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PpmLotDateDocument extends Model
+class PpmLineDateComment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'ppm_lot_date_id',
+        'ppm_line_date_id',
         'user_id',
-        'name',
-        'path',
-        'type',
-        'size'
+        'content'
     ];
 
     public function date()
     {
-        return $this->belongsTo(PpmLotDate::class, 'ppm_lot_date_id');
+        return $this->belongsTo(PpmLineDate::class, 'ppm_line_date_id');
     }
 }

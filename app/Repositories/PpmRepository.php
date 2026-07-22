@@ -13,6 +13,6 @@ class PpmRepository
      */
     public function getAllWithRelations()
     {
-        return Ppm::with(['lines.lots.dates'])->latest()->get();
+        return Ppm::with(['lines.lots', 'lines.dates'])->latest()->get();
     }
 }

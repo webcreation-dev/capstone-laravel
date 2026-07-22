@@ -29,6 +29,9 @@ class PpmResource extends JsonResource
                     'package_type' => $line->package_type,
                     'package_number' => $line->package_number,
                     'package_description' => $line->package_description,
+                    'dates' => $line->dates->groupBy('milestone_type')->map(function($dates) {
+                        return $dates->keyBy('date_category');
+                    })->toArray(),
                     'lots' => $line->lots->map(function($lot) {
                         return [
                             'id' => $lot->id,
@@ -41,9 +44,6 @@ class PpmResource extends JsonResource
                             'qualification_type' => $lot->qualification_type,
                             'control_audit' => $lot->control_audit,
                             'contract_amount' => $lot->contract_amount,
-                            'dates' => $lot->dates->groupBy('milestone_type')->map(function($dates) {
-                                return $dates->keyBy('date_category');
-                            })->toArray(),
                         ];
                     })->toArray(),
                 ];

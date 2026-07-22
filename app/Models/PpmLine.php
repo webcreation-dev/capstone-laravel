@@ -37,4 +37,9 @@ class PpmLine extends Model
     {
         return $this->hasMany(PpmLot::class);
     }
+
+    public function dates()
+    {
+        return $this->hasMany(PpmLineDate::class);
+    }
 }

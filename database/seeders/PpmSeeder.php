@@ -42,7 +42,7 @@ class PpmSeeder extends Seeder
         ];
 
         foreach ($packages as $index => $packageData) {
-            $line = clone $ppm->lines()->create($packageData);
+            $line = $ppm->lines()->create($packageData);
 
             // 3. Création de 3 Lots pour chaque ligne
             for ($i = 1; $i <= 3; $i++) {
@@ -57,57 +57,57 @@ class PpmSeeder extends Seeder
                     'control_audit' => 'Préalable',
                     'contract_amount' => rand(10000000, 50000000),
                 ]);
+            }
 
-                // Toutes les étapes
-                $testMilestones = ['submission', 'notice_no', 'ias', 'deposit_opening', 'report_submission', 'no_objection', 'attribution', 'signature', 'completion'];
+            // 4. Création des dates pour la Ligne
+            $testMilestones = ['submission', 'notice_no', 'ias', 'deposit_opening', 'report_submission', 'no_objection', 'attribution', 'signature', 'completion'];
+            
+            foreach ($testMilestones as $milestone) {
+                $baseDate = now()->addDays(rand(10, 60));
                 
-                foreach ($testMilestones as $milestone) {
-                    $baseDate = now()->addDays(rand(10, 60));
-                    
-                    // Toujours un 'plan'
-                    $lot->dates()->create([
-                        'milestone_type' => $milestone,
-                        'date_category' => 'plan',
-                        'date_value' => $baseDate,
-                    ]);
+                // Toujours un 'plan'
+                $line->dates()->create([
+                    'milestone_type' => $milestone,
+                    'date_category' => 'plan',
+                    'date_value' => $baseDate,
+                ]);
 
-                    // Parfois un 'revised'
-                    if (rand(1, 100) > 50) {
-                        $lot->dates()->create([
-                            'milestone_type' => $milestone,
-                            'date_category' => 'revised',
-                            'date_value' => $baseDate->copy()->addDays(rand(5, 15)),
+                // Parfois un 'revised'
+                if (rand(1, 100) > 50) {
+                    $line->dates()->create([
+                        'milestone_type' => $milestone,
+                        'date_category' => 'revised',
+                        'date_value' => $baseDate->copy()->addDays(rand(5, 15)),
+                    ]);
+                }
+
+                // Parfois un 'real'
+                if (rand(1, 100) > 60) {
+                    $realDate = $line->dates()->create([
+                        'milestone_type' => $milestone,
+                        'date_category' => 'real',
+                        'date_value' => $baseDate->copy()->addDays(rand(0, 20)),
+                    ]);
+                    
+                    // Ajouter des commentaires
+                    $numComments = rand(1, 3);
+                    for ($c = 0; $c < $numComments; $c++) {
+                        $realDate->comments()->create([
+                            'content' => 'Ceci est un commentaire de suivi généré pour l\'étape ' . $milestone . '. Tout s\'est déroulé comme prévu.',
                         ]);
                     }
 
-                    // Parfois un 'real'
-                    if (rand(1, 100) > 60) {
-                        $realDate = $lot->dates()->create([
-                            'milestone_type' => $milestone,
-                            'date_category' => 'real',
-                            'date_value' => $baseDate->copy()->addDays(rand(0, 20)),
+                    // Ajouter des documents
+                    $numDocs = rand(1, 2);
+                    $docTypes = ['pdf', 'docx', 'xlsx', 'png'];
+                    for ($d = 0; $d < $numDocs; $d++) {
+                        $type = $docTypes[array_rand($docTypes)];
+                        $realDate->documents()->create([
+                            'name' => 'Justificatif_' . ucfirst($milestone) . '_' . ($d + 1) . '.' . $type,
+                            'path' => '/storage/fake_path/' . uniqid() . '.' . $type,
+                            'type' => $type,
+                            'size' => rand(102400, 5242880), // 100KB to 5MB
                         ]);
-                        
-                        // Ajouter des commentaires
-                        $numComments = rand(1, 3);
-                        for ($c = 0; $c < $numComments; $c++) {
-                            $realDate->comments()->create([
-                                'content' => 'Ceci est un commentaire de suivi généré pour l\'étape ' . $milestone . '. Tout s\'est déroulé comme prévu.',
-                            ]);
-                        }
-
-                        // Ajouter des documents
-                        $numDocs = rand(1, 2);
-                        $docTypes = ['pdf', 'docx', 'xlsx', 'png'];
-                        for ($d = 0; $d < $numDocs; $d++) {
-                            $type = $docTypes[array_rand($docTypes)];
-                            $realDate->documents()->create([
-                                'name' => 'Justificatif_' . ucfirst($milestone) . '_' . ($d + 1) . '.' . $type,
-                                'path' => '/storage/fake_path/' . uniqid() . '.' . $type,
-                                'type' => $type,
-                                'size' => rand(102400, 5242880), // 100KB to 5MB
-                            ]);
-                        }
                     }
                 }
             }
